@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply backdrop-blur-3xl border border-white/10 dark:border-white/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)];
+  }
+
+  .luxury-button {
+    @apply relative overflow-hidden transition-all duration-300 active:scale-95 text-white;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  }
+
+  .luxury-button::before {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full skew-x-[-25deg];
+  }
+
+  .luxury-button:hover::before {
+    @apply opacity-100 translate-x-full;
+  }
+
+  .premium-border {
+    @apply relative;
+  }
+
+  .premium-border::after {
+    content: "";
+    @apply absolute -inset-[1px] rounded-[inherit] -z-10 bg-linear-to-br from-indigo-500/20 via-transparent to-purple-500/20 opacity-0 transition-opacity duration-500;
+  }
+
+  .premium-border:hover::after {
+    @apply opacity-100;
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #d4af37 100%);
+  }
+
+  .silver-gradient {
+    background: linear-gradient(135deg, #94a3b8 0%, #f1f5f9 50%, #94a3b8 100%);
+  }
+
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 55%
+    );
+    transform: translate(-100%, -100%);
+    transition: transform 0.6s ease;
+  }
+
+  .shine-effect:hover::after {
+    transform: translate(100%, 100%);
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
+}
