@@ -12,7 +12,8 @@ import {
   User, 
   ShieldCheck, 
   Scale, 
-  Languages 
+  Languages,
+  Image
 } from 'lucide-react';
 
 // --- Constants ---
@@ -73,6 +74,13 @@ const LINKS = [
     url: "https://aamo.vercel.app/",
     icon: <Scale className="w-7 h-7" />,
     accent: "bg-amber-500"
+  },
+  {
+    title: { ar: "مركز رفع الصور", en: "Image Hosting Center" },
+    description: { ar: "يجب تسجيل الدخول أولاً وإنشاء مستودع - انسخ رابط الصورة المباشر وضعه في مكانه في الأرشيف القانوني", en: "Login first and create a repository - Copy the direct image link and place it in its location in the Legal Archive" },
+    url: "https://postimages.org/",
+    icon: <Image className="w-7 h-7" />,
+    accent: "bg-orange-500"
   }
 ];
 
