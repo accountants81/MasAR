@@ -25,7 +25,7 @@ const LOGIN_CREDENTIALS = {
   password: 'AO01050'
 };
 
-const LOGO_URL = "https://i.postimg.cc/4yBwFmqb/file-00000000dd647246977d8d99c34ab73a.png";
+const LOGO_URL = "https://i.postimg.cc/TYZGFHn9/FB-IMG-1778842733437.jpg";
 
 const TRANSLATIONS = {
   ar: {
@@ -320,12 +320,16 @@ export default function App() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className={`p-4 rounded-2xl mb-5 shadow-inner border group relative ${
+                  className={`w-20 h-20 rounded-full mb-5 shadow-inner border group relative overflow-hidden ${
                     isDarkMode ? 'bg-indigo-500/5 border-white/5' : 'bg-indigo-100/50 border-indigo-200'
                   }`}
                 >
                   <div className="absolute inset-0 bg-indigo-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <ShieldCheck className="w-10 h-10 text-indigo-500 relative z-10" />
+                  <img 
+                    src={LOGO_URL} 
+                    alt="Logo" 
+                    className="w-full h-full object-cover relative z-10"
+                  />
                 </motion.div>
                 <h1 className="text-2xl font-display font-black tracking-tight mb-2">{t.loginTitle}</h1>
                 <p className={`text-xs leading-relaxed opacity-60 font-medium ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
@@ -449,7 +453,7 @@ export default function App() {
                 <img 
                   src={LOGO_URL} 
                   alt="AAO Logo" 
-                  className="w-28 md:w-36 h-auto drop-shadow-xl relative z-10"
+                  className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-4 border-indigo-500/30 drop-shadow-2xl relative z-10"
                 />
               </motion.div>
 
