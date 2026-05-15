@@ -13,7 +13,10 @@ import {
   ShieldCheck, 
   Scale, 
   Languages,
-  Image
+  Image,
+  Clock,
+  Calendar,
+  LayoutGrid
 } from 'lucide-react';
 
 // --- Constants ---
@@ -62,11 +65,11 @@ const LINKS = [
     accent: "bg-emerald-500"
   },
   {
-    title: { ar: "مجموعة WhatsApp العمل", en: "Work WhatsApp Group" },
-    description: { ar: "غرفة التواصل المباشر والتنسيق السريع", en: "Direct communication and layout coordination" },
-    url: "https://chat.whatsapp.com/IIEPLzg69XA0hBmoAxHDoN",
-    icon: <MessageCircle className="w-7 h-7" />,
-    accent: "bg-blue-500"
+    title: { ar: "MasAR - الدليل الشامل لنظام إدارة المصنع الذكي", en: "MasAR - Smart Factory Management Guide" },
+    description: { ar: "الدليل التعليمي والتقني المتكامل لنظام مسار الذكي", en: "Integrated educational and technical guide for MasAR system" },
+    url: "https://drive.google.com/drive/folders/1yelTTmwQ76MAiY0DSvbm1DgbhYD90e-f",
+    icon: <LayoutGrid className="w-7 h-7" />,
+    accent: "bg-indigo-500"
   },
   {
     title: { ar: "مكتب عبد العزيز عمران للمحاسبة", en: "Abdelaziz Omran Accounting Office" },
@@ -76,15 +79,105 @@ const LINKS = [
     accent: "bg-amber-500"
   },
   {
+    title: { ar: "مجموعة WhatsApp العمل", en: "Work WhatsApp Group" },
+    description: { ar: "غرفة التواصل المباشر والتنسيق السريع", en: "Direct communication and layout coordination" },
+    url: "https://chat.whatsapp.com/IIEPLzg69XA0hBmoAxHDoN",
+    icon: <MessageCircle className="w-7 h-7" />,
+    accent: "bg-blue-500"
+  },
+  {
     title: { ar: "مركز رفع الصور", en: "Image Hosting Center" },
     description: { ar: "يجب تسجيل الدخول أولاً وإنشاء مستودع - انسخ رابط الصورة المباشر وضعه في مكانه في الأرشيف القانوني", en: "Login first and create a repository - Copy the direct image link and place it in its location in the Legal Archive" },
     url: "https://postimages.org/",
     icon: <Image className="w-7 h-7" />,
     accent: "bg-orange-500"
+  },
+  {
+    title: { ar: "تطبيق جداول البيانات", en: "Google Sheets App" },
+    description: { ar: "تحميل تطبيق Google Sheets لإدارة الجداول على الأندرويد", en: "Download Google Sheets app for managing spreadsheets on Android" },
+    url: "https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.sheets",
+    icon: <FileSpreadsheet className="w-7 h-7" />,
+    accent: "bg-blue-600"
   }
 ];
 
 // --- Components ---
+
+const ClockWidget = ({ isDarkMode, lang }: { isDarkMode: boolean, lang: 'ar' | 'en' }) => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const hours = time.getHours();
+  const minutes = time.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? (lang === 'ar' ? 'مساءً' : 'PM') : (lang === 'ar' ? 'صباحاً' : 'AM');
+  const displayHours = (hours % 12 || 12).toString().padStart(2, '0');
+
+  const dateString = time.toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US', {
+    day: 'numeric',
+    month: 'short'
+  });
+  
+  const weekday = time.toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US', { weekday: 'long' });
+  const year = time.getFullYear();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4, scale: 1.02 }}
+      className={`w-full max-w-[360px] mb-12 p-[1px] rounded-[2.5rem] overflow-hidden relative group transition-all duration-700 ${
+        isDarkMode 
+          ? 'bg-gradient-to-br from-white/10 via-transparent to-white/5 shadow-2xl' 
+          : 'bg-gradient-to-br from-indigo-500/10 via-transparent to-indigo-500/5 shadow-xl'
+      }`}
+    >
+      <div className={`absolute inset-0 blur-3xl opacity-0 transition-opacity duration-700 group-hover:opacity-10 ${
+        isDarkMode ? 'bg-indigo-400' : 'bg-indigo-600'
+      }`} />
+      
+      <div className={`relative z-10 px-8 py-6 rounded-[2.4rem] flex items-center justify-between gap-6 backdrop-blur-3xl border border-white/5 ${
+        isDarkMode ? 'bg-slate-950/40' : 'bg-white/80 shadow-inner'
+      }`}>
+        {/* Clock Side */}
+        <div className="flex flex-col justify-center">
+          <div className="flex items-baseline gap-2">
+            <span className={`text-4xl md:text-5xl font-mono font-black tracking-tighter tabular-nums ${
+              isDarkMode ? 'text-indigo-400 drop-shadow-[0_0_15px_rgba(129,140,248,0.4)]' : 'text-indigo-600'
+            }`}>
+              {displayHours}:{minutes}
+            </span>
+            <span className="text-[9px] font-black opacity-30 uppercase tracking-[0.2em]">
+              {ampm}
+            </span>
+          </div>
+        </div>
+
+        <div className={`h-12 w-px ${isDarkMode ? 'bg-white/10' : 'bg-slate-200'}`} />
+
+        {/* Date Side */}
+        <div className="flex flex-col items-end text-end">
+           <span className={`text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em] mb-1.5 ${
+             isDarkMode ? 'text-indigo-400/80 shadow-indigo-500/20' : 'text-indigo-600/80 shadow-indigo-600/10'
+           }`}>
+             {weekday}
+           </span>
+           <div className="flex flex-col items-end leading-none">
+             <span className="text-sm md:text-base font-bold opacity-90 truncate max-w-[120px] md:max-w-none">
+               {dateString}
+             </span>
+             <span className="text-[10px] font-black opacity-30 mt-1">
+               {year}
+             </span>
+           </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const BackgroundBubbles = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
@@ -202,7 +295,7 @@ export default function App() {
         </motion.button>
       </div>
 
-      <main className="relative z-10 min-h-screen flex flex-col items-center pt-24 pb-12 px-4 md:px-8 lg:justify-center">
+      <main className="relative z-10 min-h-screen flex flex-col items-center pt-20 md:pt-28 pb-12 px-6 md:px-12 lg:justify-center">
         <AnimatePresence mode="wait">
           {!isLoggedIn ? (
             <motion.div
@@ -326,17 +419,19 @@ export default function App() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-12 relative"
+                className="mb-8 relative"
               >
                 <div className="absolute inset-0 bg-indigo-500/10 blur-[40px] rounded-full scale-125" />
                 <img 
                   src={LOGO_URL} 
                   alt="AAO Logo" 
-                  className="w-32 md:w-44 h-auto drop-shadow-xl relative z-10"
+                  className="w-28 md:w-36 h-auto drop-shadow-xl relative z-10"
                 />
               </motion.div>
 
-              <div className="w-full flex flex-col gap-3 px-4">
+              <ClockWidget isDarkMode={isDarkMode} lang={lang} />
+
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 px-4 max-w-4xl">
                 {LINKS.map((link, index) => (
                   <motion.a
                     key={index}
@@ -346,33 +441,30 @@ export default function App() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.01, x: lang === 'ar' ? 4 : -4 }}
-                    className={`group relative flex items-center p-4 md:p-5 rounded-xl glass-card transition-all duration-300 premium-border ${
+                    whileHover={{ scale: 1.02, y: -4 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`group relative flex items-center p-5 md:p-6 rounded-2xl glass-card transition-all duration-300 premium-border ${
                       isDarkMode 
-                        ? 'bg-slate-900/40 hover:bg-slate-800/60' 
-                        : 'bg-white/60 hover:bg-white/80'
+                        ? 'bg-slate-900/40 hover:bg-slate-800/80 shadow-2xl shadow-indigo-500/0 hover:shadow-indigo-500/5' 
+                        : 'bg-white/60 hover:bg-white/90 shadow-lg shadow-slate-200/50 hover:shadow-indigo-200/50'
                     }`}
                   >
-                    <div className={`p-3 rounded-lg transition-all group-hover:scale-110 shadow-md ${lang === 'ar' ? 'ml-4' : 'mr-4'} ${
-                      isDarkMode ? 'bg-slate-800 text-white border border-white/5' : 'bg-white text-slate-800 border border-slate-100'
+                    <div className={`p-4 rounded-xl transition-all group-hover:scale-110 shadow-lg ${lang === 'ar' ? 'ml-5' : 'mr-5'} ${
+                      isDarkMode ? 'bg-slate-800 text-white border border-white/5' : 'bg-white text-indigo-600 border border-slate-100'
                     }`}>
                       {link.icon}
                     </div>
                     
-                    <div className="flex-1">
-                      <h3 className="text-base md:text-lg font-display font-bold transition-colors group-hover:text-indigo-400">
+                    <div className="flex-1 overflow-hidden">
+                      <h3 className="text-sm md:text-lg font-display font-black tracking-tight transition-colors group-hover:text-indigo-400 truncate">
                         {lang === 'ar' ? link.title.ar : link.title.en}
                       </h3>
-                      <p className={`text-[10px] md:text-xs font-medium opacity-40`}>
+                      <p className={`text-[11px] md:text-xs font-medium opacity-50 line-clamp-2 mt-0.5 leading-relaxed`}>
                         {lang === 'ar' ? link.description.ar : link.description.en}
                       </p>
                     </div>
 
-                    <div className={`${lang === 'ar' ? 'mr-4' : 'ml-4'} opacity-0 group-hover:opacity-100 transition-all`}>
-                      <ExternalLink className="w-5 h-5 text-indigo-500" />
-                    </div>
-
-                    <div className={`absolute top-0 bottom-0 w-1 transition-all ${
+                    <div className={`absolute top-0 bottom-0 w-1.5 transition-all ${
                       lang === 'ar' ? 'left-0' : 'right-0'
                     } ${link.accent}`} />
                   </motion.a>
@@ -390,19 +482,38 @@ export default function App() {
                     </h2>
                   </div>
 
-                  <div className="flex justify-center">
+                  <div className="flex justify-center flex-row-reverse gap-8">
                     <motion.a 
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                       href="tel:01010369035"
-                      className={`flex items-center gap-3 px-8 py-4 rounded-2xl glass-card transition-all luxury-button ${
+                      className={`group p-6 rounded-3xl transition-all duration-300 border ${
                         isDarkMode 
-                        ? 'bg-slate-900 border-white/10 text-indigo-400' 
-                        : 'bg-white border-slate-200 text-indigo-600 shadow-xl'
+                        ? 'bg-slate-900/60 border-indigo-500/30 text-indigo-400 hover:border-indigo-500/60 hover:bg-indigo-500/5' 
+                        : 'bg-white border-indigo-100 text-indigo-600 hover:border-indigo-300 shadow-xl shadow-indigo-500/5'
                       }`}
+                      title={lang === 'ar' ? 'اتصال هاتف' : 'Call'}
                     >
-                      <Phone className="w-4 h-4" />
-                      <span className="text-xl font-mono font-black" dir="ltr">01010369035</span>
+                      <Phone className="w-8 h-8 stroke-[2px]" />
+                    </motion.a>
+
+                    <motion.a 
+                      whileHover={{ scale: 1.1, y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      href="https://wa.me/201010369035"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group p-6 rounded-3xl transition-all duration-300 border ${
+                        isDarkMode 
+                        ? 'bg-slate-900/60 border-emerald-500/30 text-emerald-400 hover:border-emerald-500/60 hover:bg-emerald-500/5' 
+                        : 'bg-white border-emerald-100 text-emerald-600 hover:border-emerald-300 shadow-xl shadow-emerald-500/5'
+                      }`}
+                      title={lang === 'ar' ? 'واتساب' : 'WhatsApp'}
+                    >
+                      <div className="relative">
+                        <MessageCircle className="w-8 h-8 stroke-[2.5px]" />
+                        <div className={`absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ${isDarkMode ? 'ring-2 ring-slate-900' : 'ring-2 ring-white'}`} />
+                      </div>
                     </motion.a>
                   </div>
 
