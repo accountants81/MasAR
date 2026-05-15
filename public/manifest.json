@@ -1,0 +1,35 @@
+{
+  "name": "بوابتي | بوابة الروابط",
+  "short_name": "بوابتي",
+  "description": "بوابة الروابط الرسمية للمحاسب عبدالعزيز عمران",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/TYZGFHn9/FB-IMG-1778842733437.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.postimg.cc/TYZGFHn9/FB-IMG-1778842733437.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.postimg.cc/TYZGFHn9/FB-IMG-1778842733437.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/TYZGFHn9/FB-IMG-1778842733437.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ]
+}
