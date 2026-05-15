@@ -37,6 +37,7 @@ const TRANSLATIONS = {
     error: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
     underSupervision: "تحت إشراف الخبير المحاسبي",
     supervisorName: "أ/ عبدالعزيز عمران - محاسب قانوني",
+    intellectualRights: "المحتوى مُسجّل وجميع الحقوق مملوكة للناشر",
     copyright: "جميع الحقوق مملوكة لـ",
     logoutBtn: "تسجيل الخروج الرسمي",
     visit: "زيارة الرابط"
@@ -50,6 +51,7 @@ const TRANSLATIONS = {
     error: "Invalid email or password",
     underSupervision: "Under Supervision of Accounting Expert",
     supervisorName: "Mr. Abdelaziz Omran - CPA",
+    intellectualRights: "Content is registered and all rights are reserved to the publisher",
     copyright: "All rights reserved to",
     logoutBtn: "Official Logout",
     visit: "Visit Link"
@@ -413,6 +415,28 @@ export default function App() {
                   )}
                 </motion.button>
               </form>
+
+              <div className="mt-8 pt-6 border-t border-white/5 flex flex-col items-center gap-3 text-center">
+                <p className={`text-[10px] font-bold uppercase tracking-widest opacity-40 ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {t.intellectualRights}
+                </p>
+                <motion.a
+                  href="https://aamo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black transition-all border ${
+                    isDarkMode 
+                      ? 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/20' 
+                      : 'bg-indigo-50 border-indigo-100 text-indigo-600 hover:bg-indigo-100 shadow-sm'
+                  }`}
+                >
+                  <Scale className="w-3 h-3" />
+                  <span>{t.supervisorName}</span>
+                  <ExternalLink className="w-3 h-3 opacity-50" />
+                </motion.a>
+              </div>
             </motion.div>
           ) : (
             <div className="w-full max-w-3xl flex flex-col items-center">
@@ -486,7 +510,7 @@ export default function App() {
                     <motion.a 
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
-                      href="tel:01010369035"
+                      href="tel:01226949834"
                       className={`group p-6 rounded-3xl transition-all duration-300 border ${
                         isDarkMode 
                         ? 'bg-slate-900/60 border-indigo-500/30 text-indigo-400 hover:border-indigo-500/60 hover:bg-indigo-500/5' 
@@ -500,7 +524,7 @@ export default function App() {
                     <motion.a 
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
-                      href="https://wa.me/201010369035"
+                      href="https://wa.me/201226949834"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`group p-6 rounded-3xl transition-all duration-300 border ${
