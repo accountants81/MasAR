@@ -62,7 +62,7 @@ const LINKS = [
   {
     title: { ar: "ملف Excel المحاسبي", en: "Accounting Excel File" },
     description: { ar: "الإدارة المركزية لبيانات العملاء والحسابات", en: "Centralized management of client data and accounts" },
-    url: "https://docs.google.com/spreadsheets/d/1SuqYMpzvuvqSpeAixcilOhmkC3oglKk65tTAefwYJjo/edit?usp=drivesdk",
+    url: "https://docs.google.com/spreadsheets/d/1Ukg3McxKGm_tEAp70PuVAdYhpJK_9OO0osmBoKrBn90/edit?usp=drivesdk",
     icon: <FileSpreadsheet className="w-7 h-7" />,
     accent: "bg-emerald-500"
   },
