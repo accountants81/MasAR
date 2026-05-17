@@ -16,7 +16,12 @@ import {
   Image,
   Clock,
   Calendar,
-  LayoutGrid
+  LayoutGrid,
+  Search,
+  Copy,
+  Check,
+  Zap,
+  Sparkles
 } from 'lucide-react';
 
 // --- Constants ---
@@ -40,21 +45,35 @@ const TRANSLATIONS = {
     intellectualRights: "المحتوى مُسجّل وجميع الحقوق مملوكة للناشر",
     copyright: "جميع الحقوق مملوكة لـ",
     logoutBtn: "تسجيل الخروج الرسمي",
-    visit: "زيارة الرابط"
+    visit: "زيارة الرابط",
+    searchPlaceholder: "ابحث في الروابط والملفات...",
+    copySuccess: "تم النسخ بنجاح",
+    noResults: "لا توجد نتائج مطابقة لبحثك",
+    welcomeBack: "مرحباً بك مجدداً",
+    quickStats: "نظرة عامة على الموارد",
+    totalLinks: "إجمالي الروابط",
+    activeNow: "الجلسات النشطة"
   },
   en: {
     loginTitle: "Admin Access",
-    loginSubtitle: "Please enter credentials to access the Masar Group links portal",
+    loginSubtitle: "Sign in to access your secure accounting workspace",
     emailLabel: "Email Address",
     passwordLabel: "Password",
-    loginBtn: "Enter Portal",
+    loginBtn: "Authorize Access",
     error: "Invalid email or password",
     underSupervision: "Under Supervision of Accounting Expert",
     supervisorName: "Mr. Abdelaziz Omran - CPA",
     intellectualRights: "Content is registered and all rights are reserved to the publisher",
     copyright: "All rights reserved to",
     logoutBtn: "Official Logout",
-    visit: "Visit Link"
+    visit: "Visit Link",
+    searchPlaceholder: "Search links and files...",
+    copySuccess: "Copied successfully",
+    noResults: "No matching results found",
+    welcomeBack: "Welcome Back",
+    quickStats: "Resources Overview",
+    totalLinks: "Total Links",
+    activeNow: "Active Sessions"
   }
 };
 
@@ -62,7 +81,7 @@ const LINKS = [
   {
     title: { ar: "ملف Excel المحاسبي", en: "Accounting Excel File" },
     description: { ar: "الإدارة المركزية لبيانات العملاء والحسابات", en: "Centralized management of client data and accounts" },
-    url: "https://docs.google.com/spreadsheets/d/1Ukg3McxKGm_tEAp70PuVAdYhpJK_9OO0osmBoKrBn90/edit?usp=drivesdk",
+    url: "https://docs.google.com/spreadsheets/d/1GnXGaXENhKlmUbgP_ZA50ZKhlCHH7kzh/edit?usp=drivesdk&ouid=101182642930711005555&rtpof=true&sd=true",
     icon: <FileSpreadsheet className="w-7 h-7" />,
     accent: "bg-emerald-500"
   },
@@ -104,6 +123,22 @@ const LINKS = [
 ];
 
 // --- Components ---
+
+const QuickAction = ({ icon: Icon, label, onClick, isDarkMode }: { icon: any, label: string, onClick: () => void, isDarkMode: boolean }) => (
+  <motion.button
+    whileHover={{ scale: 1.05, y: -2 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={onClick}
+    className={`flex flex-col items-center gap-2 p-4 rounded-2xl transition-all border ${
+      isDarkMode 
+        ? 'bg-slate-900/40 border-white/5 hover:border-indigo-500/30 text-slate-400 hover:text-indigo-400' 
+        : 'bg-white/60 border-slate-200 hover:border-indigo-500/30 text-slate-500 hover:text-indigo-600'
+    }`}
+  >
+    <Icon className="w-5 h-5" />
+    <span className="text-[10px] font-black uppercase tracking-widest">{label}</span>
+  </motion.button>
+);
 
 const ClockWidget = ({ isDarkMode, lang }: { isDarkMode: boolean, lang: 'ar' | 'en' }) => {
   const [time, setTime] = useState(new Date());
@@ -185,10 +220,39 @@ const BackgroundBubbles = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
     <div className="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
       <div className={`absolute inset-0 transition-colors duration-1000 ${isDarkMode ? 'bg-slate-950' : 'bg-slate-50'}`} />
+      
+      {/* Precision Grid Pattern */}
+      <div className={`absolute inset-0 opacity-[0.03] ${isDarkMode ? 'invert-0' : 'invert'}`} 
+           style={{ backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`, backgroundSize: '32px 32px' }} />
+      
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(99,102,241,0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(168,85,247,0.03),transparent_40%)]" />
       
-      {/* Optimized static glows to prevent repaint lag */}
+      {/* Animated Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [0, -40, 0],
+              x: [0, Math.random() * 20, 0],
+              opacity: [0.1, 0.3, 0.1],
+            }}
+            transition={{
+              duration: 5 + Math.random() * 5,
+              repeat: Infinity,
+              delay: i * 1.5,
+            }}
+            className={`absolute w-1 h-1 rounded-full ${isDarkMode ? 'bg-indigo-400' : 'bg-indigo-600'}`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Optimized static glows */}
       <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-indigo-500/[0.04] blur-[80px] rounded-full" />
       <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-purple-500/[0.03] blur-[80px] rounded-full" />
     </div>
@@ -203,6 +267,8 @@ export default function App() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [copyStatus, setCopyStatus] = useState<number | null>(null);
 
   // Initial setup
   useEffect(() => {
@@ -252,6 +318,21 @@ export default function App() {
     setLang(next);
     localStorage.setItem('lang_aamo', next);
   };
+
+  const handleCopyLink = (url: string, index: number) => {
+    navigator.clipboard.writeText(url);
+    setCopyStatus(index);
+    setTimeout(() => setCopyStatus(null), 2000);
+  };
+
+  const filteredLinks = LINKS.filter(link => {
+    const query = searchQuery.toLowerCase();
+    const titleAr = link.title.ar.toLowerCase();
+    const titleEn = link.title.en.toLowerCase();
+    const descAr = link.description.ar.toLowerCase();
+    const descEn = link.description.en.toLowerCase();
+    return titleAr.includes(query) || titleEn.includes(query) || descAr.includes(query) || descEn.includes(query);
+  });
 
   const t = TRANSLATIONS[lang];
 
@@ -443,73 +524,196 @@ export default function App() {
               </div>
             </motion.div>
           ) : (
-            <div className="w-full max-w-3xl flex flex-col items-center">
+            <div className="w-full max-w-4xl flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-8 relative"
+                className="mb-6 relative flex flex-col items-center"
               >
-                <div className="absolute inset-0 bg-indigo-500/10 blur-[40px] rounded-full scale-125" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/10 blur-[50px] rounded-full scale-125 pointer-events-none" />
                 <img 
                   src={LOGO_URL} 
                   alt="AAO Logo" 
-                  className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-4 border-indigo-500/30 drop-shadow-2xl relative z-10"
+                  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-indigo-500/30 drop-shadow-2xl relative z-10 mb-4"
                 />
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-center"
+                >
+                  <h2 className="text-2xl md:text-4xl font-display font-black uppercase tracking-[0.1em] text-indigo-500 mb-1">
+                    {t.welcomeBack}
+                  </h2>
+                </motion.div>
               </motion.div>
+
+              <div className="mb-4" />
 
               <ClockWidget isDarkMode={isDarkMode} lang={lang} />
 
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 px-4 max-w-4xl">
-                {LINKS.map((link, index) => (
-                  <motion.a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, y: -4 }}
+              {/* Quick Resources Bar */}
+              <div className="w-full max-w-2xl grid grid-cols-2 gap-4 px-4 mb-10">
+                 {/* Total Links Button */}
+                 <motion.button
+                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`group relative flex items-center p-5 md:p-6 rounded-2xl glass-card transition-all duration-300 premium-border ${
-                      isDarkMode 
-                        ? 'bg-slate-900/40 hover:bg-slate-800/80 shadow-2xl shadow-indigo-500/0 hover:shadow-indigo-500/5' 
-                        : 'bg-white/60 hover:bg-white/90 shadow-lg shadow-slate-200/50 hover:shadow-indigo-200/50'
+                    onClick={() => setSearchQuery('')}
+                    className={`flex flex-col gap-1 items-center justify-center text-center p-5 rounded-2xl border backdrop-blur-md transition-all ${
+                      !searchQuery 
+                        ? (isDarkMode ? 'bg-indigo-500/20 border-indigo-500/40 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-indigo-50 border-indigo-200 shadow-sm')
+                        : (isDarkMode ? 'bg-slate-900/40 border-white/5 opacity-60' : 'bg-slate-50 border-slate-200 opacity-60')
+                    }`}
+                 >
+                   <span className="text-[10px] font-black uppercase tracking-widest opacity-60">{t.totalLinks}</span>
+                   <span className={`text-2xl font-display font-black leading-none ${!searchQuery ? 'text-indigo-500' : (isDarkMode ? 'text-slate-400' : 'text-slate-600')}`}>
+                     {LINKS.length}
+                   </span>
+                 </motion.button>
+                 
+                 {/* Files Button */}
+                 <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setSearchQuery('excel')}
+                    className={`flex flex-col items-center justify-center gap-1.5 p-5 rounded-2xl border backdrop-blur-md transition-all ${
+                      searchQuery === 'excel'
+                        ? (isDarkMode ? 'bg-indigo-500/20 border-indigo-500/40 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-indigo-50 border-indigo-200 shadow-sm')
+                        : (isDarkMode ? 'bg-slate-900/40 border-white/5 opacity-60' : 'bg-slate-50 border-slate-200 opacity-60')
                     }`}
                   >
-                    <div className={`p-4 rounded-xl transition-all group-hover:scale-110 shadow-lg ${lang === 'ar' ? 'ml-5' : 'mr-5'} ${
-                      isDarkMode ? 'bg-slate-800 text-white border border-white/5' : 'bg-white text-indigo-600 border border-slate-100'
-                    }`}>
-                      {link.icon}
-                    </div>
-                    
-                    <div className="flex-1 overflow-hidden">
-                      <h3 className="text-sm md:text-lg font-display font-black tracking-tight transition-colors group-hover:text-indigo-400 truncate">
-                        {lang === 'ar' ? link.title.ar : link.title.en}
-                      </h3>
-                      <p className={`text-[11px] md:text-xs font-medium opacity-50 line-clamp-2 mt-0.5 leading-relaxed`}>
-                        {lang === 'ar' ? link.description.ar : link.description.en}
-                      </p>
-                    </div>
+                    <Zap className={`w-5 h-5 ${searchQuery === 'excel' ? 'text-indigo-500' : (isDarkMode ? 'text-slate-400' : 'text-slate-600')}`} />
+                    <span className={`text-[10px] font-black uppercase tracking-widest ${searchQuery === 'excel' ? 'text-indigo-500' : (isDarkMode ? 'text-slate-400' : 'text-slate-600')}`}>
+                      {lang === 'ar' ? "الملفات" : "Files"}
+                    </span>
+                  </motion.button>
+              </div>
 
-                    <div className={`absolute top-0 bottom-0 w-1.5 transition-all ${
-                      lang === 'ar' ? 'left-0' : 'right-0'
-                    } ${link.accent}`} />
-                  </motion.a>
-                ))}
+              {/* Search Bar */}
+              <div className="w-full max-w-2xl px-4 mb-10">
+                <div className="relative group">
+                  <div className={`absolute inset-0 blur-2xl opacity-10 transition-opacity group-focus-within:opacity-30 ${isDarkMode ? 'bg-indigo-400' : 'bg-indigo-600'}`} />
+                  <div className={`relative flex items-center p-1 rounded-2xl border backdrop-blur-xl transition-all shadow-lg ${
+                    isDarkMode 
+                    ? 'bg-slate-900/60 border-white/5 focus-within:border-indigo-500/40' 
+                    : 'bg-white/80 border-slate-200 focus-within:border-indigo-500/30'
+                  }`}>
+                    <div className="p-3">
+                      <Search className="w-5 h-5 opacity-40" />
+                    </div>
+                    <input 
+                      type="text"
+                      placeholder={t.searchPlaceholder}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full bg-transparent border-none outline-none text-sm md:text-base font-medium py-3"
+                    />
+                    {searchQuery && (
+                      <button 
+                         onClick={() => setSearchQuery('')}
+                         className="p-3 opacity-40 hover:opacity-100 transition-opacity"
+                      >
+                        <LogOut className="w-4 h-4 rotate-45" /> {/* Use as close icon */}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 px-4 max-w-4xl">
+                <AnimatePresence>
+                  {filteredLinks.length > 0 ? filteredLinks.map((link, index) => (
+                    <motion.div
+                      layout
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="group relative"
+                    >
+                      <motion.a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`block h-full relative p-5 md:p-6 rounded-2xl glass-card transition-all duration-300 premium-border overflow-hidden ${
+                          isDarkMode 
+                            ? 'bg-slate-900/40 hover:bg-slate-800/80 shadow-2xl' 
+                            : 'bg-white/60 hover:bg-white/90 shadow-lg'
+                        }`}
+                      >
+                        {/* Interactive Shimmer Effect */}
+                        <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                          <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/5 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+                        </div>
+
+                        <div className="flex items-center">
+                          <div className={`p-4 rounded-xl transition-all group-hover:scale-110 shadow-lg ${lang === 'ar' ? 'ml-5' : 'mr-5'} ${
+                            isDarkMode ? 'bg-slate-800 text-white border border-white/5' : 'bg-white text-indigo-600 border border-slate-100'
+                          }`}>
+                            {link.icon}
+                          </div>
+                          
+                          <div className="flex-1 overflow-hidden pr-8"> {/* Padding for copy button */}
+                            <h3 className="text-sm md:text-lg font-display font-black tracking-tight transition-colors group-hover:text-indigo-400 truncate">
+                              {lang === 'ar' ? link.title.ar : link.title.en}
+                            </h3>
+                            <p className={`text-[11px] md:text-xs font-medium opacity-50 line-clamp-2 mt-0.5 leading-relaxed`}>
+                              {lang === 'ar' ? link.description.ar : link.description.en}
+                            </p>
+                          </div>
+
+                          <div className={`absolute top-0 bottom-0 w-1.5 transition-all ${
+                            lang === 'ar' ? 'left-0' : 'right-0'
+                          } ${link.accent}`} />
+                        </div>
+                      </motion.a>
+
+                      {/* Quick Action: Copy Button */}
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleCopyLink(link.url, index);
+                        }}
+                        className={`absolute top-4 ${lang === 'ar' ? 'left-4' : 'right-4'} p-2 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all z-20 ${
+                          isDarkMode ? 'bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20' : 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100'
+                        }`}
+                        title={t.copySuccess}
+                      >
+                        {copyStatus === index ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                      </button>
+
+                      <AnimatePresence>
+                        {copyStatus === index && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-indigo-500 text-white text-[10px] font-bold rounded-full shadow-lg z-50 pointer-events-none"
+                          >
+                            {t.copySuccess}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )) : (
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="col-span-full py-20 flex flex-col items-center gap-4 opacity-40"
+                    >
+                      <Zap className="w-12 h-12 stroke-[1px]" />
+                      <p className="text-sm font-bold tracking-tight">{t.noResults}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               <footer className="w-full flex flex-col items-center gap-10 mt-20 pb-12">
                 <div className="text-center space-y-6 w-full max-w-xl px-4">
-                  <div className="space-y-2">
-                    <p className={`text-base font-medium opacity-50 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                      {t.underSupervision}
-                    </p>
-                    <h2 className="text-2xl md:text-3xl font-display font-black text-indigo-500">
-                      {t.supervisorName}
-                    </h2>
-                  </div>
-
                   <div className="flex justify-center flex-row-reverse gap-8">
                     <motion.a 
                       whileHover={{ scale: 1.1, y: -5 }}
@@ -545,7 +749,7 @@ export default function App() {
                     </motion.a>
                   </div>
 
-                  <div className="pt-8 border-t border-white/5 space-y-2">
+                  <div className="pt-8 border-t border-white/5 space-y-4">
                     <p className={`text-xs font-bold opacity-60 ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
                       {t.copyright} <span className="text-indigo-500 font-extrabold">AAO</span> &copy; {new Date().getFullYear()}
                     </p>
