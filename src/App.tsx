@@ -227,8 +227,8 @@ const LINKS = [
     },
     url: "https://drive.google.com/drive/folders/1yelTTmwQ76MAiY0DSvbm1DgbhYD90e-f",
     icon: <LayoutGrid className="w-6.5 h-6.5 md:w-7 md:h-7 stroke-[1.75]" />,
-    accent: "bg-indigo-600",
-    borderColor: "border-l-indigo-600 hover:border-l-indigo-500",
+    accent: "bg-luxury-brown-700",
+    borderColor: "border-l-luxury-brown-700 hover:border-l-luxury-brown-600",
   },
   {
     title: {
@@ -241,8 +241,8 @@ const LINKS = [
     },
     url: "https://aamo.vercel.app/",
     icon: <Scale className="w-6.5 h-6.5 md:w-7 md:h-7 stroke-[1.75]" />,
-    accent: "bg-emerald-600",
-    borderColor: "border-l-emerald-600 hover:border-l-emerald-500",
+    accent: "bg-luxury-brown-800",
+    borderColor: "border-l-luxury-brown-800 hover:border-l-luxury-brown-700",
   },
   {
     title: { ar: "مركز رفع الصور", en: "Image Hosting Center" },
@@ -252,8 +252,8 @@ const LINKS = [
     },
     url: "https://postimages.org/",
     icon: <Image className="w-6.5 h-6.5 md:w-7 md:h-7 stroke-[1.75]" />,
-    accent: "bg-orange-500",
-    borderColor: "border-l-orange-500 hover:border-l-orange-400",
+    accent: "bg-luxury-gold",
+    borderColor: "border-l-luxury-gold hover:border-l-[#dfc384]",
   },
   {
     title: { ar: "تطبيق جداول البيانات", en: "Google Sheets App" },
@@ -265,8 +265,8 @@ const LINKS = [
     icon: (
       <FileSpreadsheet className="w-6.5 h-6.5 md:w-7 md:h-7 stroke-[1.75]" />
     ),
-    accent: "bg-blue-600",
-    borderColor: "border-l-blue-600 hover:border-l-blue-500",
+    accent: "bg-luxury-brown-500",
+    borderColor: "border-l-luxury-brown-500 hover:border-l-luxury-brown-600",
   },
 ];
 
@@ -291,11 +291,11 @@ const QuickAction = ({
     onClick={onClick}
     className={`flex flex-col items-center gap-2 p-3 md:p-3.5 rounded-2xl transition-all border ${
       isDarkMode
-        ? "bg-slate-900/40 border-white/10 hover:border-indigo-500/40 hover:bg-slate-900/80 text-slate-300 hover:text-indigo-300"
-        : "bg-white border-slate-200 hover:border-indigo-400 text-slate-650 hover:text-indigo-750 shadow-sm shadow-indigo-500/5 font-semibold"
+        ? "bg-[#181514]/40 border-white/5 hover:border-luxury-gold/40 hover:bg-[#181514]/80 text-slate-300 hover:text-luxury-gold"
+        : "bg-white border-[#e7cca9]/30 hover:border-luxury-gold text-luxury-brown-800 hover:text-[#523014] shadow-sm shadow-luxury-gold-muted font-semibold"
     }`}
   >
-    <Icon className="w-5 h-5 text-indigo-500 dark:text-indigo-400" />
+    <Icon className="w-5 h-5 text-luxury-gold dark:text-[#dfc384]" />
     <span
       className={`text-[10px] md:text-[11px] font-bold ${lang === "ar" ? "tracking-normal" : "uppercase tracking-widest"}`}
     >
@@ -350,13 +350,13 @@ const ClockWidget = ({
       animate={{ opacity: 1, scale: 1 }}
       className={`w-full max-w-[350px] md:max-w-[380px] mb-6 p-[1px] rounded-2xl overflow-hidden relative group transition-all duration-150 shadow-lg ${
         isDarkMode
-          ? "bg-gradient-to-br from-indigo-500/10 via-slate-900 to-indigo-500/5 shadow-slate-950/20"
-          : "bg-gradient-to-br from-indigo-50/50 to-slate-200/50 shadow-indigo-500/5"
+          ? "bg-gradient-to-br from-luxury-gold/20 via-[#181514] to-luxury-brown-900/50 shadow-black/20"
+          : "bg-gradient-to-br from-[#f4ebd9] to-[#faf6f0] shadow-luxury-gold-muted"
       }`}
     >
       <div
-        className={`relative z-10 px-5 py-3.5 rounded-2xl flex items-center justify-between gap-3 border border-indigo-500/10 ${
-          isDarkMode ? "bg-slate-950" : "bg-white"
+        className={`relative z-10 px-5 py-3.5 rounded-2xl flex items-center justify-between gap-3 border border-luxury-gold/15 ${
+          isDarkMode ? "bg-[#120f0e]" : "bg-white"
         }`}
       >
         {/* Clock Side */}
@@ -368,22 +368,22 @@ const ClockWidget = ({
             <span
               className={`text-3xl md:text-4xl font-mono font-bold tracking-tight tabular-nums ${
                 isDarkMode
-                  ? "bg-gradient-to-r from-indigo-400 via-violet-300 to-blue-200 bg-clip-text text-transparent"
-                  : "text-indigo-800 font-extrabold"
+                  ? "bg-gradient-to-r from-luxury-gold to-[#dfc384] bg-clip-text text-transparent"
+                  : "text-luxury-brown-800 font-extrabold"
               }`}
             >
               {displayHours}
             </span>
             <span
-              className={`text-2.5xl md:text-3.5xl font-mono font-bold animate-pulse ${isDarkMode ? "text-indigo-400/60" : "text-indigo-600/60"}`}
+              className={`text-2.5xl md:text-3.5xl font-mono font-bold animate-pulse ${isDarkMode ? "text-luxury-gold/60" : "text-[#cca374]"}`}
             >
               :
             </span>
             <span
               className={`text-3xl md:text-4xl font-mono font-bold tracking-tight tabular-nums ${
                 isDarkMode
-                  ? "bg-gradient-to-r from-indigo-100 via-indigo-300 to-sky-200 bg-clip-text text-transparent"
-                  : "text-indigo-800 font-extrabold"
+                  ? "bg-gradient-to-r from-[#dfc384] via-[#faf6f0] to-[#dfc384] bg-clip-text text-transparent"
+                  : "text-luxury-brown-800 font-extrabold"
               }`}
             >
               {minutes}
@@ -411,7 +411,7 @@ const ClockWidget = ({
           <span
             className={`text-[10px] md:text-xs font-bold mb-0.5 flex items-center gap-1 ${
               lang === "ar" ? "tracking-normal" : "uppercase tracking-wider"
-            } ${isDarkMode ? "text-indigo-400" : "text-indigo-700"}`}
+            } ${isDarkMode ? "text-luxury-gold" : "text-luxury-brown-700"}`}
           >
             <Calendar className="w-3.5 h-3.5" />
             {weekday}
@@ -436,14 +436,14 @@ const BackgroundBubbles = memo(({ isDarkMode }: { isDarkMode: boolean }) => {
       {/* Base Background Layer - very snappy instant transition */}
       <div
         className={`absolute inset-0 transition-colors duration-100 ${
-          isDarkMode ? "bg-[#090a10]" : "bg-[#f8fafd]"
+          isDarkMode ? "bg-[#0a0807]" : "bg-[#faf8f5]"
         }`}
       />
 
       {/* Futuristic Cyber Grid overlay */}
       <div
-        className={`absolute inset-0 opacity-[0.02] dark:opacity-[0.05] ${
-          isDarkMode ? "invert-0 text-slate-500" : "invert text-slate-400"
+        className={`absolute inset-0 opacity-[0.02] dark:opacity-[0.04] ${
+          isDarkMode ? "invert-0 text-luxury-gold/30" : "invert text-luxury-brown-800/30"
         }`}
         style={{
           backgroundImage: `
@@ -457,19 +457,19 @@ const BackgroundBubbles = memo(({ isDarkMode }: { isDarkMode: boolean }) => {
       {/* Soft Luminous Glow Nebula Overlays with super-fast hardware-accelerated radial gradients */}
       <div
         className={`absolute inset-0 transition-all duration-150 ${
-          isDarkMode ? "opacity-45" : "opacity-20"
+          isDarkMode ? "opacity-55" : "opacity-25"
         }`}
         style={{
-          background: "radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.45) 0%, transparent 60%), radial-gradient(circle at 10% 80%, rgba(139, 92, 246, 0.35) 0%, transparent 60%), radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+          background: "radial-gradient(circle at 90% 10%, rgba(197, 160, 89, 0.18) 0%, transparent 60%), radial-gradient(circle at 10% 80%, rgba(138, 94, 56, 0.15) 0%, transparent 60%), radial-gradient(circle at 50% 50%, rgba(30, 20, 15, 0.2) 0%, transparent 70%)",
         }}
       />
 
       {/* Cybernetic Star Particles overlay - Softer and slower */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-25">
-        <div className="absolute top-[15%] left-[22%] w-1.5 h-1.5 rounded-full bg-indigo-200/60 blur-xs animate-ping" style={{ animationDuration: '6s' }} />
-        <div className="absolute top-[48%] left-[72%] w-1 h-1 rounded-full bg-violet-300/45 blur-xs animate-ping" style={{ animationDuration: '8s' }} />
-        <div className="absolute top-[82%] left-[28%] w-1.5 h-1.5 rounded-full bg-blue-200/50 blur-xs animate-ping" style={{ animationDuration: '9s' }} />
-        <div className="absolute top-[58%] left-[12%] w-1 h-1 rounded-full bg-purple-200/40 blur-xs animate-ping" style={{ animationDuration: '7s' }} />
+      <div className="absolute inset-0 opacity-15 dark:opacity-35">
+        <div className="absolute top-[15%] left-[22%] w-1.5 h-1.5 rounded-full bg-[#dfc384]/70 blur-xs animate-ping" style={{ animationDuration: '6s' }} />
+        <div className="absolute top-[48%] left-[72%] w-1 h-1 rounded-full bg-[#c5a059]/60 blur-xs animate-ping" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-[82%] left-[28%] w-1.5 h-1.5 rounded-full bg-[#cca374]/60 blur-xs animate-ping" style={{ animationDuration: '9s' }} />
+        <div className="absolute top-[58%] left-[12%] w-1 h-1 rounded-full bg-[#8a5e38]/50 blur-xs animate-ping" style={{ animationDuration: '7s' }} />
       </div>
     </div>
   );
@@ -535,7 +535,7 @@ const SERVICES = [
 ];
 
 const renderServiceIcon = (iconName: string, isDarkMode: boolean) => {
-  const iconClass = `w-4.5 h-4.5 text-indigo-500 dark:text-indigo-400 shrink-0`;
+  const iconClass = `w-4.5 h-4.5 text-luxury-gold dark:text-[#dfc384] shrink-0`;
   switch (iconName) {
     case "Percent":
       return <FileSpreadsheet className={iconClass} />;
@@ -1129,10 +1129,10 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen font-sans selection:bg-indigo-500/20 overflow-x-hidden ${
+      className={`min-h-screen font-sans selection:bg-luxury-gold/30 overflow-x-hidden ${
         isDarkMode
-          ? "dark bg-[#090a10] text-[#f7f5f0]"
-          : "bg-[#f8fafd] text-[#0f172a]"
+          ? "dark bg-[#0a0807] text-[#faf8f5]"
+          : "bg-[#faf8f5] text-[#1f1612]"
       }`}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
@@ -1149,8 +1149,8 @@ export default function App() {
           onClick={toggleLang}
           className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl transition-all shadow-lg font-display glass-card ${
             isDarkMode
-              ? "bg-[#11131c]/60 text-indigo-400 border border-white/5 hover:border-indigo-500/40"
-              : "bg-white text-indigo-700 border border-slate-200 hover:border-indigo-500/20 shadow-indigo-500/5 font-semibold"
+              ? "bg-[#120f0e]/60 text-luxury-gold border border-white/5 hover:border-luxury-gold/40"
+              : "bg-white text-luxury-brown-700 border border-slate-200 hover:border-luxury-gold/30 shadow-sm shadow-luxury-gold/5 font-semibold"
           }`}
         >
           <Languages className="w-4 h-4" />
@@ -1165,8 +1165,8 @@ export default function App() {
           onClick={toggleTheme}
           className={`p-2.5 rounded-xl transition-all duration-150 shadow-lg glass-card relative overflow-hidden flex items-center justify-center ${
             isDarkMode
-              ? "bg-[#11131c]/60 text-indigo-400 border border-white/5 hover:border-indigo-500/40"
-              : "bg-white text-indigo-700 border border-slate-200/85 hover:border-indigo-400/30 hover:bg-indigo-50/10 shadow-sm shadow-indigo-500/5"
+              ? "bg-[#120f0e]/60 text-luxury-gold border border-white/5 hover:border-luxury-gold/40"
+              : "bg-white text-luxury-brown-700 border border-slate-200/85 hover:border-luxury-gold/30 hover:bg-luxury-brown-50 shadow-sm shadow-luxury-gold/5"
           }`}
           title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
@@ -1177,9 +1177,9 @@ export default function App() {
             className="flex items-center justify-center"
           >
             {isDarkMode ? (
-              <Sun className="w-4 h-4 text-indigo-400" />
+              <Sun className="w-4 h-4 text-luxury-gold" />
             ) : (
-              <Moon className="w-4 h-4 text-indigo-700" />
+              <Moon className="w-4 h-4 text-luxury-brown-700" />
             )}
           </motion.div>
         </motion.button>
@@ -1195,8 +1195,8 @@ export default function App() {
           onClick={() => setIsAboutOpen(true)}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all shadow-lg font-bold text-xs ${
             isDarkMode
-              ? "bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20"
-              : "bg-indigo-50 border border-indigo-100 text-indigo-700 hover:bg-indigo-100/70 shadow-sm shadow-indigo-500/5 font-semibold"
+              ? "bg-luxury-gold/10 border border-luxury-gold/30 text-luxury-gold hover:bg-luxury-gold/20"
+              : "bg-[#f4ebd9]/40 border border-[#e7cca9]/60 text-luxury-brown-800 hover:bg-[#f4ebd9]/70 shadow-sm shadow-luxury-gold/5 font-semibold"
           }`}
         >
           <Info className="w-4 h-4" />
@@ -1224,7 +1224,7 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", ease: "easeOut", duration: 0.15 }}
-              className={`fixed top-0 bottom-0 right-0 border-l w-[240px] sm:w-[275px] bg-[#0c0e18] border-neutral-800 shadow-2xl z-[70] overflow-y-auto p-6 flex flex-col justify-between`}
+              className={`fixed top-0 bottom-0 right-0 border-l w-[240px] sm:w-[275px] bg-[#0c0a09] border-neutral-800/80 shadow-2xl z-[70] overflow-y-auto p-6 flex flex-col justify-between`}
               dir={lang === "ar" ? "rtl" : "ltr"}
             >
               <div className="space-y-6">
@@ -1234,7 +1234,7 @@ export default function App() {
                     <img
                       src={LOGO_URL}
                       alt="Logo"
-                      className="w-10 h-10 rounded-full border border-indigo-500/30 object-cover"
+                      className="w-10 h-10 rounded-full border border-luxury-gold/30 object-cover"
                     />
                     <div>
                       <h3 className="text-sm font-display font-bold tracking-tight text-white">
@@ -1259,7 +1259,7 @@ export default function App() {
 
                 {/* Who We Are (من نحن) Section */}
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-indigo-400 font-display font-black text-xs uppercase tracking-widest">
+                  <div className="flex items-center gap-2 text-luxury-gold font-display font-black text-xs uppercase tracking-widest">
                     <Info className="w-3.5 h-3.5" />
                     <span>
                       {t.aboutUsTitle}
@@ -1278,7 +1278,7 @@ export default function App() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.01 }}
-                        className="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[10.5px] font-black transition-all bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 mb-1"
+                        className="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[10.5px] font-black transition-all bg-luxury-gold/10 hover:bg-luxury-gold/20 text-luxury-gold mb-1"
                       >
                         <span className="truncate">{t.supervisorName}</span>
                         <ExternalLink className="w-3 h-3 opacity-50 shrink-0" />
@@ -1291,7 +1291,7 @@ export default function App() {
                           setIsSidebarOpen(false);
                           setIsAboutOpen(true);
                         }}
-                        className="w-full py-2 px-3 text-center text-[10px] font-black tracking-wide text-indigo-400 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/15 rounded-xl transition-all flex items-center justify-center gap-1.5"
+                        className="w-full py-2 px-3 text-center text-[10px] font-black tracking-wide text-luxury-gold bg-luxury-gold/10 hover:bg-luxury-gold/20 border border-luxury-gold/15 rounded-xl transition-all flex items-center justify-center gap-1.5"
                       >
                         <span>{lang === "ar" ? "خدماتنا المهنية المتكاملة ✦" : "Our Integrated Services ✦"}</span>
                       </motion.button>
@@ -1303,7 +1303,7 @@ export default function App() {
                 <div className="space-y-3 pt-4 border-t border-white/5">
                   {!isLoggedIn ? (
                     <>
-                      <div className="flex items-center gap-2 text-indigo-400 font-display font-black text-xs uppercase tracking-widest">
+                      <div className="flex items-center gap-2 text-luxury-gold font-display font-black text-xs uppercase tracking-widest">
                         <Lock className="w-3.5 h-3.5" />
                         <span>{t.adminPortal}</span>
                       </div>
@@ -1313,7 +1313,7 @@ export default function App() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setShowLoginForm(true)}
-                          className="w-full py-3 px-4 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 hover:text-indigo-300 border border-indigo-500/20 text-xs font-black transition-all flex items-center justify-center gap-2 group"
+                          className="w-full py-3 px-4 rounded-xl bg-luxury-gold/10 hover:bg-luxury-gold/20 text-[#dfc384] hover:text-white border border-luxury-gold/20 text-xs font-black transition-all flex items-center justify-center gap-2 group"
                         >
                           <Key className="w-3.5 h-3.5 transition-transform group-hover:rotate-12" />
                           <span>{t.adminLoginBtn}</span>
@@ -1335,7 +1335,7 @@ export default function App() {
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                               placeholder="example@gmail.com"
-                              className="w-full py-2.5 px-3 rounded-xl border border-white/5 bg-slate-950/60 text-white text-xs outline-none focus:border-indigo-500/40 transition-all font-medium"
+                              className="w-full py-2.5 px-3 rounded-xl border border-white/5 bg-slate-950/60 text-white text-xs outline-none focus:border-luxury-gold/40 transition-all font-medium"
                             />
                           </div>
 
@@ -1358,7 +1358,7 @@ export default function App() {
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
                               placeholder="••••••••"
-                              className="w-full py-2.5 px-3 rounded-xl border border-white/5 bg-slate-950/60 text-white text-xs outline-none focus:border-indigo-500/40 transition-all font-medium"
+                              className="w-full py-2.5 px-3 rounded-xl border border-white/5 bg-slate-950/60 text-white text-xs outline-none focus:border-luxury-gold/40 transition-all font-medium"
                             />
                           </div>
 
@@ -1371,14 +1371,14 @@ export default function App() {
                           <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full py-2.5 rounded-xl bg-indigo-500 text-white text-xs font-black hover:bg-indigo-600 transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-500/20"
+                            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-luxury-brown-700 to-luxury-brown-900 border border-luxury-gold/25 hover:from-luxury-brown-600 hover:to-luxury-brown-800 text-white text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-lg"
                           >
                             {isLoading ? (
                               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                             ) : (
                               <>
                                 <span>{t.loginBtn}</span>
-                                <ShieldCheck className="w-3.5 h-3.5" />
+                                <ShieldCheck className="w-3.5 h-3.5 text-luxury-gold" />
                               </>
                             )}
                           </button>
@@ -1386,9 +1386,9 @@ export default function App() {
                       )}
                     </>
                   ) : (
-                    <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-2xl p-4 text-center space-y-3">
+                    <div className="bg-luxury-gold/5 border border-luxury-gold/25 rounded-2xl p-4 text-center space-y-3">
                       <div className="flex justify-center">
-                        <ShieldCheck className="w-8 h-8 text-emerald-400" />
+                        <ShieldCheck className="w-8 h-8 text-luxury-gold" />
                       </div>
                       <p className="text-xs text-slate-200 font-bold">
                         {lang === "ar"
@@ -1440,14 +1440,14 @@ export default function App() {
               transition={{ type: "tween", ease: "easeOut", duration: 0.12 }}
               className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-2xl h-auto max-h-[85vh] p-5 md:p-6 rounded-[2.2rem] border shadow-2xl z-[101] transition-all flex flex-col overflow-hidden ${
                 isDarkMode
-                  ? "bg-[#0b0c16] border-slate-800 text-white shadow-indigo-500/10"
+                  ? "bg-[#120f0e] border-neutral-800 text-white shadow-luxury-gold-muted"
                   : "bg-white border-slate-200 text-slate-900 shadow-slate-300"
               }`}
             >
               <div className="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3 mb-3 shrink-0">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`p-2 rounded-xl ${isDarkMode ? "bg-indigo-500/10 text-indigo-400" : "bg-indigo-50 text-indigo-700"}`}
+                    className={`p-2 rounded-xl ${isDarkMode ? "bg-luxury-gold/10 text-luxury-gold" : "bg-[#f4ebd9]/40 text-luxury-brown-800"}`}
                   >
                     <Info className="w-4.5 h-4.5" />
                   </div>
@@ -1460,7 +1460,7 @@ export default function App() {
                   className={`p-1.5 rounded-lg transition-colors ${
                     isDarkMode
                       ? "hover:bg-white/10 text-slate-400 hover:text-white"
-                      : "hover:bg-indigo-50 text-slate-500 hover:text-indigo-800"
+                      : "hover:bg-luxury-brown-50 text-slate-500 hover:text-luxury-brown-850"
                   }`}
                 >
                   <X className="w-4 h-4" />
@@ -1484,7 +1484,7 @@ export default function App() {
                         ? "تحت إشراف الخبير والمستشار الضريبي"
                         : "Under Supervision & Management of"}
                     </span>
-                    <span className="text-indigo-600 dark:text-indigo-400 font-extrabold text-[12px] sm:text-xs">
+                    <span className="text-luxury-gold dark:text-[#dfc384] font-extrabold text-[12px] sm:text-xs">
                       {t.supervisorName}
                     </span>
                   </div>
@@ -1493,7 +1493,7 @@ export default function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
-                    className="self-stretch sm:self-auto px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md flex items-center justify-center gap-1.5 text-xs font-bold transition-colors"
+                    className="self-stretch sm:self-auto px-4 py-2 bg-luxury-brown-700 hover:bg-luxury-brown-800 border border-luxury-gold/25 text-white rounded-xl shadow-md flex items-center justify-center gap-1.5 text-xs font-bold transition-colors"
                   >
                     <span>{lang === "ar" ? "الموقع التعريفي للمكتب" : "Office Profile"}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -1503,8 +1503,8 @@ export default function App() {
                 {/* Services Title Header block */}
                 <div className="pt-2 border-t border-black/5 dark:border-white/5">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-                    <span className="text-[10px] md:text-xs font-black tracking-widest text-indigo-500 dark:text-indigo-400 uppercase">
+                    <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
+                    <span className="text-[10px] md:text-xs font-black tracking-widest text-luxury-gold dark:text-[#dfc384] uppercase">
                       {lang === "ar" ? "مجالات تخصصنا المهنية وعملنا المتكامل" : "OUR INTEGRATED PROFESSIONAL SERVICES"}
                     </span>
                   </div>
@@ -1516,15 +1516,15 @@ export default function App() {
                         key={index}
                         className={`group p-3 rounded-2xl border transition-all duration-200 flex gap-3 text-start hover:scale-[1.01] ${
                           isDarkMode
-                            ? "bg-slate-900/50 border-white/5 hover:border-indigo-500/30 hover:bg-indigo-500/[0.02]"
-                            : "bg-slate-50/70 border-slate-200/80 hover:border-indigo-400/50 hover:bg-white"
+                            ? "bg-[#181514]/60 border-white/5 hover:border-luxury-gold/30 hover:bg-luxury-gold/[0.02]"
+                            : "bg-[#faf6f0]/70 border-[#e7cca9]/50 hover:border-luxury-gold/50 hover:bg-white"
                         }`}
                       >
                         <div
                           className={`p-2 rounded-xl shrink-0 w-9.5 h-9.5 flex items-center justify-center transition-all ${
                             isDarkMode
-                              ? "bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500/20"
-                              : "bg-indigo-50 text-indigo-700 group-hover:bg-indigo-100"
+                              ? "bg-luxury-gold/10 text-luxury-gold group-hover:bg-luxury-gold/20"
+                              : "bg-[#f4ebd9]/60 text-luxury-brown-800 group-hover:bg-[#e7cca9]"
                           }`}
                         >
                           {renderServiceIcon(srv.icon, isDarkMode)}
@@ -1550,7 +1550,7 @@ export default function App() {
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   onClick={() => setIsAboutOpen(false)}
-                  className="w-full text-center py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs md:text-sm transition-all shadow-md shadow-indigo-600/10"
+                  className="w-full text-center py-2.5 rounded-xl bg-luxury-brown-800 hover:bg-luxury-brown-900 border border-luxury-gold/20 text-[#fbfbf9] font-bold text-xs md:text-sm transition-all shadow-md shadow-luxury-brown-900/10"
                 >
                   {t.modalOk}
                 </motion.button>
@@ -1582,14 +1582,14 @@ export default function App() {
               transition={{ type: "tween", ease: "easeOut", duration: 0.12 }}
               className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-md p-5 md:p-6 rounded-[2.2rem] border shadow-2xl z-[101] transition-all flex flex-col overflow-hidden ${
                 isDarkMode
-                  ? "bg-[#0b0c16] border-slate-800 text-white shadow-indigo-500/10"
+                  ? "bg-[#120f0e] border-neutral-800 text-white shadow-luxury-gold-muted"
                   : "bg-white border-slate-200 text-slate-900 shadow-slate-300"
               }`}
             >
               <div className="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3 mb-4 shrink-0" dir={lang === "ar" ? "rtl" : "ltr"}>
                 <div className="flex items-center gap-3">
                   <div
-                    className={`p-2 rounded-xl ${isDarkMode ? "bg-indigo-500/10 text-indigo-400" : "bg-indigo-50 text-indigo-700"}`}
+                    className={`p-2 rounded-xl ${isDarkMode ? "bg-luxury-gold/10 text-luxury-gold" : "bg-[#f4ebd9]/40 text-luxury-brown-800"}`}
                   >
                     <Lock className="w-4.5 h-4.5" />
                   </div>
@@ -1602,7 +1602,7 @@ export default function App() {
                   className={`p-1.5 rounded-lg transition-colors ${
                     isDarkMode
                       ? "hover:bg-white/10 text-slate-400 hover:text-white"
-                      : "hover:bg-indigo-50 text-slate-500 hover:text-indigo-800"
+                      : "hover:bg-luxury-brown-50 text-slate-500 hover:text-luxury-brown-800"
                   }`}
                 >
                   <X className="w-4 h-4" />
@@ -1625,10 +1625,10 @@ export default function App() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="example@gmail.com"
-                      className={`w-full py-2.5 px-3 rounded-xl border text-xs outline-none focus:ring-1 focus:ring-indigo-500/40 transition-all font-medium ${
+                      className={`w-full py-2.5 px-3 rounded-xl border text-xs outline-none focus:ring-1 focus:ring-luxury-gold/40 transition-all font-medium ${
                         isDarkMode
                           ? "border-white/10 bg-slate-950/60 text-white"
-                          : "border-slate-300 bg-slate-50 text-slate-900"
+                          : "border-[#e7cca9]/50 bg-white text-slate-900"
                       }`}
                     />
                   </div>
@@ -1643,10 +1643,10 @@ export default function App() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••"
-                      className={`w-full py-2.5 px-3 rounded-xl border text-xs outline-none focus:ring-1 focus:ring-indigo-500/40 transition-all font-medium ${
+                      className={`w-full py-2.5 px-3 rounded-xl border text-xs outline-none focus:ring-1 focus:ring-luxury-gold/40 transition-all font-medium ${
                         isDarkMode
                           ? "border-white/10 bg-slate-950/60 text-white"
-                          : "border-slate-300 bg-slate-50 text-slate-900"
+                          : "border-[#e7cca9]/50 bg-white text-slate-900"
                       }`}
                     />
                   </div>
@@ -1662,13 +1662,13 @@ export default function App() {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full text-center py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold text-xs md:text-sm transition-all shadow-md shadow-indigo-600/10 flex items-center justify-center gap-2"
+                      className="w-full text-center py-2.5 rounded-xl bg-luxury-brown-700 hover:bg-luxury-brown-800 border border-luxury-gold/25 text-white font-bold text-xs md:text-sm transition-all shadow-md flex items-center justify-center gap-2"
                     >
                       {isLoading ? (
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       ) : (
                         <>
-                          <ShieldCheck className="w-4 h-4" />
+                          <ShieldCheck className="w-4 h-4 text-luxury-gold" />
                           <span>{t.loginBtn}</span>
                         </>
                       )}
@@ -1677,12 +1677,12 @@ export default function App() {
                 </form>
               ) : (
                 <div className="space-y-4 text-center" dir={lang === "ar" ? "rtl" : "ltr"}>
-                  <div className={`p-4 rounded-xl text-center space-y-3 ${isDarkMode ? "bg-[#10192d]/50 border border-indigo-500/20" : "bg-indigo-50/50 border border-indigo-100"}`}>
+                  <div className={`p-4 rounded-xl text-center space-y-3 ${isDarkMode ? "bg-[#1a1513]/55 border border-luxury-gold/20" : "bg-[#f4ebd9]/40 border border-[#e7cca9]/50"}`}>
                     <div className="flex justify-center">
-                      <ShieldCheck className="w-8 h-8 text-emerald-500" />
+                      <ShieldCheck className="w-8 h-8 text-luxury-gold" />
                     </div>
                     <div>
-                      <p className={`text-xs font-bold ${isDarkMode ? "text-emerald-400" : "text-emerald-700"}`}>
+                      <p className={`text-xs font-bold ${isDarkMode ? "text-luxury-gold" : "text-luxury-brown-800"}`}>
                         {lang === "ar" ? "مسجل كمسؤول للنظام" : "Authorized Administrator"}
                       </p>
                       <p className={`text-[10px] ${isDarkMode ? "text-slate-400" : "text-slate-500"} font-semibold mt-1`}>
@@ -1697,7 +1697,7 @@ export default function App() {
                       className={`flex-1 py-2 rounded-xl text-xs font-bold border transition-all ${
                         isDarkMode
                           ? "border-white/15 text-slate-300 hover:bg-white/5"
-                          : "border-slate-300 text-slate-700 hover:bg-slate-100"
+                          : "border-slate-300 text-slate-700 hover:bg-[#faf6f0]"
                       }`}
                     >
                       {lang === "ar" ? "إغلاق" : "Close"}
@@ -1731,15 +1731,15 @@ export default function App() {
           >
             <div className="relative mb-5 group">
               {/* Ultra-luxe animated outer radial glow for the logo */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 via-violet-600/20 to-blue-500/30 rounded-full blur-2xl opacity-90 group-hover:scale-115 transition-transform duration-700 pointer-events-none" />
-              {/* Micro border ring with luxury gold and royal indigo touch */}
-              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-[#d4af37] via-indigo-500/40 to-[#f9e29c] opacity-90 p-[2px] pointer-events-none rounded-full" style={{ padding: '2px' }}>
-                <div className={`w-full h-full rounded-full ${isDarkMode ? "bg-[#090a10]" : "bg-[#f8fafd]"}`} />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#c5a059]/20 via-[#8a5e38]/15 to-[#3a1f0a]/10 rounded-full blur-2xl opacity-90 group-hover:scale-115 transition-transform duration-700 pointer-events-none" />
+              {/* Micro border ring with luxury gold and royal touch */}
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-[#d4af37] via-[#8a5e38]/40 to-[#f9e29c] opacity-90 p-[2px] pointer-events-none rounded-full" style={{ padding: '2px' }}>
+                <div className={`w-full h-full rounded-full ${isDarkMode ? "bg-[#0a0807]" : "bg-[#faf8f5]"}`} />
               </div>
               <img
                 src={LOGO_URL}
                 alt="AAO Logo"
-                className="w-28 h-28 md:w-34 md:h-34 rounded-full object-cover border-2 border-[#d4af37]/30 dark:border-[#d4af37]/45 shadow-[0_0_35px_rgba(99,102,241,0.25)] relative z-10 transition-all duration-500 group-hover:scale-[1.03]"
+                className="w-28 h-28 md:w-34 md:h-34 rounded-full object-cover border-2 border-[#d4af37]/30 dark:border-[#d4af37]/45 shadow-[0_0_35px_rgba(197,160,89,0.25)] relative z-10 transition-all duration-500 group-hover:scale-[1.03]"
               />
             </div>
             <motion.div
@@ -1752,10 +1752,10 @@ export default function App() {
                   lang === "ar" ? "leading-snug" : "leading-tight"
                 } transition-all duration-300`}
                 style={{
-                  color: isDarkMode ? "#ffffff" : "#1e1b4b",
+                  color: isDarkMode ? "#ffffff" : "#2b1a11",
                   textShadow: isDarkMode 
-                    ? "0 0 15px rgba(99,102,241,0.95), 0 0 30px rgba(99,102,241,0.5)" 
-                    : "0 1px 2px rgba(0,0,0,0.05), 0 0 12px rgba(99,102,241,0.15)",
+                    ? "0 0 15px rgba(197,160,89,0.30), 0 0 30px rgba(197,160,89,0.15)" 
+                    : "0 1px 2px rgba(0,0,0,0.05), 0 0 12px rgba(197,160,89,0.12)",
                 }}
               >
                 {isLoggedIn ? t.welcomeBack : t.normalUserViewTitle}
@@ -1789,14 +1789,14 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               className={`w-full max-w-3xl p-6 rounded-[2.4rem] border shadow-2xl ${
                 isDarkMode
-                  ? "bg-[#0b0c16] border-slate-800/80"
-                  : "bg-white border-slate-200 shadow-indigo-500/5"
+                  ? "bg-[#120f0e] border-neutral-800/80"
+                  : "bg-white border-[#e7cca9]/40 shadow-luxury-gold-muted"
               }`}
             >
               {/* Header admin actions */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-4">
                 <div>
-                  <div className="flex items-center gap-2 text-indigo-500">
+                  <div className="flex items-center gap-2 text-luxury-gold">
                     <ShieldCheck className="w-5 h-5" />
                     <h3 className="text-sm font-black uppercase tracking-wide">
                       {t.adminTitle}
@@ -1804,7 +1804,7 @@ export default function App() {
                   </div>
                   <p className="text-[11px] opacity-60 font-semibold">
                     {t.activeCodesCount}:{" "}
-                    <span className="text-indigo-500 font-extrabold">
+                    <span className="text-luxury-gold font-extrabold">
                       {pageCodesList.length + waCodesList.length}
                     </span>
                   </p>
@@ -1815,7 +1815,7 @@ export default function App() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handleExportBackup}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 text-[11px] font-black border border-indigo-500/10 transition-all"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-luxury-gold/10 hover:bg-luxury-gold/20 text-[#dfc384] text-[11px] font-black border border-luxury-gold/20 transition-all"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>{t.exportBtn}</span>
@@ -1825,7 +1825,7 @@ export default function App() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-neutral-500/10 hover:bg-neutral-500/20 text-slate-300 text-[11px] font-black border border-white/5 transition-all"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-neutral-500/10 hover:bg-[#cacaca]/20 text-slate-300 text-[11px] font-black border border-white/5 transition-all"
                   >
                     <Upload className="w-3.5 h-3.5" />
                     <span>{t.importBtn}</span>
@@ -1840,7 +1840,7 @@ export default function App() {
                 </div>
               )}
               {adminFormSuccess && (
-                <div className="mb-4 text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-xl">
+                <div className="mb-4 text-xs font-bold text-luxury-gold bg-luxury-gold/5 border border-luxury-gold/20 p-3 rounded-xl">
                   {adminFormSuccess}
                 </div>
               )}
@@ -1855,7 +1855,7 @@ export default function App() {
                   }}
                   className={`py-3 px-4 rounded-xl text-xs font-black transition-all border flex items-center justify-center gap-2 ${
                     adminActiveTab === "page"
-                      ? "bg-indigo-500/10 border-indigo-500/35 text-indigo-400 font-extrabold shadow-sm"
+                      ? "bg-luxury-gold/15 border-luxury-gold/45 text-luxury-gold font-extrabold shadow-sm"
                       : isDarkMode
                         ? "bg-slate-950/40 border-white/5 text-slate-500 hover:text-slate-300"
                         : "bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-700"
@@ -1863,7 +1863,7 @@ export default function App() {
                 >
                   <FileSpreadsheet className="w-4 h-4" />
                   <span>{t.pageCodesTab}</span>
-                  <span className="text-[10px] bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] bg-luxury-gold/25 text-[#dfc384] px-2 py-0.5 rounded-full">
                     {pageCodesList.length}
                   </span>
                 </button>
@@ -1876,7 +1876,7 @@ export default function App() {
                   }}
                   className={`py-3 px-4 rounded-xl text-xs font-black transition-all border flex items-center justify-center gap-2 ${
                     adminActiveTab === "wa"
-                      ? "bg-emerald-500/10 border-emerald-500/35 text-emerald-400 font-extrabold shadow-sm"
+                      ? "bg-luxury-brown-500/10 border-luxury-brown-300/35 text-[#dfc384] font-extrabold shadow-sm"
                       : isDarkMode
                         ? "bg-slate-950/40 border-white/5 text-slate-500 hover:text-slate-300"
                         : "bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-700"
@@ -1884,7 +1884,7 @@ export default function App() {
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t.waCodesTab}</span>
-                  <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] bg-luxury-brown-500/25 text-[#cca374] px-2 py-0.5 rounded-full font-bold">
                     {waCodesList.length}
                   </span>
                 </button>
@@ -1895,8 +1895,8 @@ export default function App() {
                 onSubmit={handleAddCode}
                 className={`p-4 rounded-xl border transition-all duration-300 mb-6 space-y-4 ${
                   isDarkMode
-                    ? "bg-slate-950/60 border-white/5 focus-within:border-indigo-500/25"
-                    : "bg-slate-50 border-slate-200 focus-within:border-indigo-300"
+                    ? "bg-[#181514]/60 border-white/5 focus-within:border-luxury-gold/30"
+                    : "bg-[#faf6f0] border-slate-200 focus-within:border-luxury-brown-350"
                 }`}
               >
                 <div className="flex flex-col md:flex-row gap-4">
@@ -1918,8 +1918,8 @@ export default function App() {
                       placeholder={t.placeholderCode}
                       className={`auto-resize-textarea resize-none overflow-y-hidden w-full py-2.5 px-3 rounded-lg border outline-none text-xs transition-all font-mono font-bold ${
                         isDarkMode
-                          ? "border-white/10 bg-slate-950/50 text-white focus:border-indigo-500/40"
-                          : "border-slate-200 bg-white text-slate-800 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/5"
+                          ? "border-white/10 bg-slate-950/50 text-white focus:border-luxury-gold/40"
+                          : "border-[#e7cca9]/50 bg-white text-slate-800 focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/5"
                       }`}
                     />
                   </div>
@@ -1942,8 +1942,8 @@ export default function App() {
                       placeholder={t.placeholderUrl}
                       className={`auto-resize-textarea resize-none overflow-y-hidden w-full py-2.5 px-3 rounded-lg border outline-none text-xs transition-all font-mono ${
                         isDarkMode
-                          ? "border-white/10 bg-slate-950/50 text-white focus:border-indigo-500/40"
-                          : "border-slate-200 bg-white text-slate-800 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/5"
+                          ? "border-white/10 bg-slate-950/50 text-white focus:border-luxury-gold/40"
+                          : "border-[#e7cca9]/50 bg-white text-slate-800 focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/5"
                       }`}
                     />
                   </div>
@@ -1967,8 +1967,8 @@ export default function App() {
                       placeholder={t.placeholderNote}
                       className={`auto-resize-textarea resize-none overflow-y-hidden w-full py-2.5 px-3 rounded-lg border outline-none text-xs transition-all ${
                         isDarkMode
-                          ? "border-white/10 bg-slate-950/50 text-white focus:border-indigo-500/40"
-                          : "border-slate-200 bg-white text-slate-800 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/5"
+                          ? "border-white/10 bg-slate-950/50 text-white focus:border-luxury-gold/40"
+                          : "border-[#e7cca9]/50 bg-white text-slate-800 focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/5"
                       }`}
                     />
                   </div>
@@ -1987,8 +1987,8 @@ export default function App() {
                       placeholder={t.placeholderMaxUses}
                       className={`w-full py-2.5 px-3 rounded-lg border outline-none text-xs transition-all ${
                         isDarkMode
-                          ? "border-white/10 bg-slate-950/50 text-white focus:border-indigo-500/40"
-                          : "border-slate-200 bg-white text-slate-800 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/5"
+                          ? "border-white/10 bg-slate-950/50 text-white focus:border-luxury-gold/40"
+                          : "border-[#e7cca9]/50 bg-white text-slate-800 focus:border-luxury-gold focus:ring-4 focus:ring-luxury-gold/5"
                       }`}
                     />
                   </div>
@@ -1999,7 +1999,7 @@ export default function App() {
                     whileHover={{ scale: 1.015 }}
                     whileTap={{ scale: 0.985 }}
                     type="submit"
-                    className="px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black transition-all flex items-center gap-1.5 shadow-md shadow-indigo-500/10"
+                    className="px-5 py-2.5 rounded-lg bg-luxury-brown-700 hover:bg-luxury-brown-800 text-white text-xs font-black transition-all flex items-center gap-1.5 shadow-md border border-luxury-gold/20"
                   >
                     <Plus className="w-4 h-4" />
                     <span>{t.addBtn}</span>
@@ -2008,9 +2008,9 @@ export default function App() {
               </form>
 
               {/* Live Search block inside registered keys (Helpful when managing 1,000+ items!) */}
-              <div className="relative mb-4 flex items-center pr-[1px] pl-[1px] rounded-xl border border-white/5 bg-slate-950/40 p-1">
+              <div className="relative mb-4 flex items-center pr-[1px] pl-[1px] rounded-xl border border-white/5 bg-[#181514]/40 p-1">
                 <div className="p-2.5">
-                  <Search className="w-4 h-4 opacity-40" />
+                  <Search className="w-4 h-4 opacity-40 text-luxury-gold" />
                 </div>
                 <input
                   type="text"
@@ -2062,14 +2062,14 @@ export default function App() {
                           key={keyName}
                           className={`p-3.5 rounded-xl border flex flex-col gap-3 ${
                             isDarkMode
-                              ? "bg-slate-900/90 border-indigo-500/40"
-                              : "bg-indigo-50/50 border-indigo-200"
+                              ? "bg-[#181514]/95 border-luxury-gold/50"
+                              : "bg-[#faf6f0]/80 border-[#e7cca9]"
                           }`}
                         >
                           <div className="flex flex-col gap-3">
                             <div className="flex flex-col gap-2.5" dir="ltr">
                               <div className="flex flex-col gap-1">
-                                <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest text-left">
+                                <span className="text-[10px] font-black text-luxury-gold uppercase tracking-widest text-left">
                                   {t.codeLabel}
                                 </span>
                                 <textarea
@@ -2080,12 +2080,12 @@ export default function App() {
                                     e.target.style.height = "auto";
                                     e.target.style.height = `${e.target.scrollHeight}px`;
                                   }}
-                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-indigo-500/60 transition-all font-mono font-bold text-left"
+                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-luxury-gold/60 transition-all font-mono font-bold text-left"
                                   placeholder={t.placeholderCode}
                                 />
                               </div>
                               <div className="flex flex-col gap-1">
-                                <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest text-left">
+                                <span className="text-[10px] font-black text-luxury-gold uppercase tracking-widest text-left">
                                   {t.urlLabel}
                                 </span>
                                 <textarea
@@ -2096,7 +2096,7 @@ export default function App() {
                                     e.target.style.height = "auto";
                                     e.target.style.height = `${e.target.scrollHeight}px`;
                                   }}
-                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-indigo-500/60 transition-all font-mono text-left"
+                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-luxury-gold/60 transition-all font-mono text-left"
                                   placeholder={t.placeholderUrl}
                                 />
                               </div>
@@ -2104,7 +2104,7 @@ export default function App() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                               <div className="md:col-span-2 flex flex-col gap-1">
                                 <span
-                                  className="text-[10px] font-black text-indigo-400 uppercase tracking-widest text-right"
+                                  className="text-[10px] font-black text-luxury-gold uppercase tracking-widest text-right"
                                   dir={lang === "ar" ? "rtl" : "ltr"}
                                 >
                                   {t.noteLabel}
@@ -2117,7 +2117,7 @@ export default function App() {
                                     e.target.style.height = "auto";
                                     e.target.style.height = `${e.target.scrollHeight}px`;
                                   }}
-                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-indigo-500/30 transition-all font-sans"
+                                  className="auto-resize-textarea resize-none overflow-y-hidden w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-luxury-gold/30 transition-all font-sans"
                                   placeholder={t.placeholderNote}
                                   dir={lang === "ar" ? "rtl" : "ltr"}
                                 />
@@ -2125,7 +2125,7 @@ export default function App() {
 
                               <div className="flex flex-col gap-1">
                                 <span
-                                  className="text-[10px] font-black text-indigo-400 uppercase tracking-widest text-right"
+                                  className="text-[10px] font-black text-luxury-gold uppercase tracking-widest text-right"
                                   dir={lang === "ar" ? "rtl" : "ltr"}
                                 >
                                   {t.maxUsesLabel}
@@ -2136,7 +2136,7 @@ export default function App() {
                                   value={editMaxUses}
                                   onChange={(e) => setEditMaxUses(e.target.value)}
                                   placeholder={t.placeholderMaxUses}
-                                  className="w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-indigo-500/30 transition-all h-[36px] font-sans text-right"
+                                  className="w-full py-2 px-3 rounded-lg border border-white/10 bg-slate-950 text-white text-xs outline-none focus:border-luxury-gold/30 transition-all h-[36px] font-sans text-right"
                                   dir={lang === "ar" ? "rtl" : "ltr"}
                                 />
                               </div>
@@ -2151,9 +2151,9 @@ export default function App() {
                               onClick={() =>
                                 handleSaveEdit(adminActiveTab, item.code)
                               }
-                              className="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-[11px] font-black hover:bg-emerald-600 transition-all flex items-center gap-1 shadow-sm"
+                              className="px-3 py-1.5 rounded-lg bg-luxury-brown-700 hover:bg-luxury-brown-800 border border-luxury-gold/30 text-white text-[11px] font-black transition-all flex items-center gap-1 shadow-sm"
                             >
-                              <Check className="w-3.5 h-3.5" />
+                              <Check className="w-3.5 h-3.5 text-luxury-gold" />
                               <span>{t.saveBtnText}</span>
                             </button>
                             <button
@@ -2161,7 +2161,7 @@ export default function App() {
                               className={`px-3 py-1.5 rounded-lg text-[11px] font-black transition-all border ${
                                 isDarkMode
                                   ? "bg-slate-800 border-white/5 text-slate-300 hover:bg-slate-700"
-                                  : "bg-white border-slate-200 text-slate-600 hover:bg-slate-100"
+                                  : "bg-white border-[#e7cca9]/50 text-slate-600 hover:bg-[#faf6f0]"
                               }`}
                             >
                               <span>{t.cancelBtnText}</span>
@@ -2176,8 +2176,8 @@ export default function App() {
                         key={keyName}
                         className={`p-3.5 rounded-xl border flex flex-col gap-2 transition-all duration-300 ${
                           isDarkMode
-                            ? "bg-slate-950/50 border-white/5 hover:border-indigo-500/20"
-                            : "bg-slate-50 border-slate-200 hover:border-indigo-500/10 shadow-sm"
+                            ? "bg-[#181514]/30 border-[#e7cca9]/10 hover:border-luxury-gold/30"
+                            : "bg-[#faf6f0]/70 border-[#e7cca9]/30 hover:border-luxury-gold/40 shadow-sm"
                         }`}
                       >
                         <div className="flex items-center justify-between gap-4">
@@ -2199,7 +2199,7 @@ export default function App() {
                               >
                                 {item.url}
                               </span>
-                              <span className="text-xs font-mono font-bold select-all bg-indigo-500/10 text-indigo-400 px-2.5 py-1 rounded-lg">
+                              <span className="text-xs font-mono font-bold select-all bg-luxury-gold/15 text-luxury-gold px-2.5 py-1 rounded-lg">
                                 {item.code}
                               </span>
                             </div>
@@ -2210,8 +2210,8 @@ export default function App() {
                               onClick={() => handleCopyLink(item.url, keyName)}
                               className={`p-1.5 rounded-lg transition-all ${
                                 isDarkMode
-                                  ? "bg-slate-900 text-indigo-300 hover:bg-slate-800"
-                                  : "bg-white text-indigo-600 hover:bg-slate-50 border border-slate-100 shadow-sm"
+                                  ? "bg-[#181514]/85 text-[#dfc384] hover:bg-[#201c1a]"
+                                  : "bg-white text-luxury-brown-700 hover:bg-[#faf6f0] border border-[#e7cca9]/50 shadow-sm"
                               }`}
                             >
                               {copyStatus === keyName ? (
@@ -2233,8 +2233,8 @@ export default function App() {
                               }
                               className={`p-1.5 rounded-lg transition-all ${
                                 isDarkMode
-                                  ? "bg-slate-900 text-indigo-300 hover:bg-slate-800"
-                                  : "bg-white text-indigo-600 hover:bg-slate-50 border border-slate-100 shadow-sm"
+                                  ? "bg-[#181514]/85 text-[#dfc384] hover:bg-[#201c1a]"
+                                  : "bg-white text-luxury-brown-700 hover:bg-[#faf6f0] border border-[#e7cca9]/50 shadow-sm"
                               }`}
                               title={t.editBtnText}
                             >
@@ -2263,7 +2263,7 @@ export default function App() {
                             className="flex items-start gap-1.5 mt-2 border-t border-black/[0.03] dark:border-white/[0.03] pt-2"
                             style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
                           >
-                            <div className="px-1.5 py-0.5 bg-indigo-500/10 dark:bg-indigo-500/15 text-indigo-500 dark:text-indigo-400 rounded text-[9px] font-bold flex items-center gap-1 shrink-0">
+                            <div className="px-1.5 py-0.5 bg-luxury-gold/15 dark:bg-luxury-gold/20 text-luxury-gold dark:text-[#dfc384] rounded text-[9px] font-bold flex items-center gap-1 shrink-0">
                               <Sparkles className="w-2.5 h-2.5" />
                               <span>
                                 {lang === "ar" ? "ملاحظة المشرف" : "Admin Note"}
@@ -2280,11 +2280,11 @@ export default function App() {
                           className="flex items-center gap-2 text-[10px] mt-1.5 justify-end"
                           style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
                         >
-                          <div className="flex items-center gap-1.5 bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded-full font-bold">
-                            <Activity className="w-3 h-3 text-indigo-400" />
+                          <div className="flex items-center gap-1.5 bg-luxury-gold/15 text-luxury-gold px-2 py-0.5 rounded-full font-bold">
+                            <Activity className="w-3 h-3 text-luxury-gold animate-pulse" />
                             <span>
                               {t.usesCountText}:{" "}
-                              <strong className={`${isDarkMode ? "text-indigo-300" : "text-indigo-700"} font-extrabold font-sans`}>
+                              <strong className={`${isDarkMode ? "text-[#dfc384]" : "text-luxury-brown-800"} font-extrabold font-sans`}>
                                 {item.currentUses || 0}
                               </strong>
                               {" / "}
@@ -2315,20 +2315,20 @@ export default function App() {
                   transition={{ duration: 0.15 }}
                   className={`relative p-3.5 sm:p-6 md:p-8 rounded-[1.8rem] sm:rounded-[2rem] border transition-all duration-150 flex flex-col justify-between gap-4 sm:gap-6 shadow-2xl overflow-hidden group ${
                     isDarkMode
-                      ? "bg-[#0c0e18] border-slate-800/80 focus-within:border-indigo-500/60 focus-within:ring-4 focus-within:ring-indigo-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-indigo-600/80 hover:shadow-[0_20px_50px_rgba(99,102,241,0.03)]"
-                      : "bg-white border-slate-200 focus-within:border-indigo-400 focus-within:ring-4 focus-within:ring-indigo-500/5 shadow-[0_12px_35px_rgba(0,0,0,0.03)] hover:border-indigo-400 hover:shadow-[0_20px_45px_rgba(99,102,241,0.06)]"
+                      ? "bg-[#120f0e] border-[#e7cca9]/15 focus-within:border-luxury-gold/60 focus-within:ring-4 focus-within:ring-luxury-gold/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-luxury-gold/80 hover:shadow-[0_20px_50px_rgba(197,160,89,0.03)]"
+                      : "bg-white border-[#e7cca9]/50 focus-within:border-luxury-gold focus-within:ring-4 focus-within:ring-luxury-gold/5 shadow-[0_12px_35px_rgba(0,0,0,0.03)] hover:border-luxury-gold hover:shadow-[0_20px_45px_rgba(197,160,89,0.06)]"
                   }`}
                 >
                   {/* Micro-glow indicator line at the top of card to look incredibly sleek */}
-                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent" />
+                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-luxury-gold/40 to-transparent" />
                   
                   {/* Subtly animated inner holographic back-glow */}
-                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-indigo-500/5 dark:bg-indigo-500/8 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-125" />
+                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-luxury-gold/5 dark:bg-[#dfc384]/8 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-125" />
 
                   {/* Top luxury status tracking bar inside the gateway */}
-                  <div className="flex items-center justify-between w-full text-[8.5px] font-mono tracking-wider text-slate-400 dark:text-indigo-400/80 border-b border-slate-100 dark:border-white/5 pb-2.5 sm:pb-3">
+                  <div className="flex items-center justify-between w-full text-[8.5px] font-mono tracking-wider text-slate-400 dark:text-luxury-gold/80 border-b border-slate-100 dark:border-white/5 pb-2.5 sm:pb-3">
                     <span className="flex items-center gap-1 sm:gap-1.5 font-bold">
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-ping" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-luxury-gold animate-ping" />
                       {lang === 'ar' ? 'بوابة المستندات' : 'DOCUMENTS GATE'}
                     </span>
                     <span className="hidden xs:inline">NODE // EXCEL_SRC</span>
@@ -2342,8 +2342,8 @@ export default function App() {
                       <div
                         className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-100 ${
                           isDarkMode
-                            ? "bg-indigo-500/10 text-indigo-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
-                            : "bg-indigo-55 text-indigo-700 shadow-sm"
+                            ? "bg-luxury-gold/15 text-luxury-gold shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
+                            : "bg-[#f4ebd9]/60 text-luxury-brown-800 shadow-sm"
                         }`}
                       >
                         <FileSpreadsheet className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
@@ -2351,13 +2351,13 @@ export default function App() {
                       <div className="text-right">
                         <h4
                           className={`text-[11px] sm:text-xs md:text-sm font-black tracking-tight transition-all ${
-                            isDarkMode ? "text-slate-200" : "text-slate-900"
+                            isDarkMode ? "text-slate-200" : "text-[#523014]"
                           }`}
                         >
                           {t.excelShortcutLabel}
                         </h4>
                         <p className={`text-[9px] sm:text-[10px] mt-0.5 line-clamp-1 transition-all ${
-                          isDarkMode ? "text-slate-400" : "text-slate-600"
+                          isDarkMode ? "text-slate-400" : "text-slate-650"
                         }`}>
                           {lang === 'ar' ? 'تنزيل النماذج والمستندات' : 'Download sheets instantly'}
                         </p>
@@ -2379,8 +2379,8 @@ export default function App() {
                           pageCodeError
                             ? "border-red-500 text-red-500 bg-red-500/5 font-sans font-bold"
                             : isDarkMode
-                              ? "bg-[#080b13] border-slate-800/90 text-slate-100 focus:border-indigo-500/60 focus:bg-[#0c101d] font-mono font-bold shadow-inner"
-                              : "bg-slate-50 border-slate-200 text-slate-800 focus:border-indigo-400 focus:bg-white font-mono font-bold"
+                              ? "bg-[#181514] border-white/5 text-slate-100 focus:border-luxury-gold/60 focus:bg-[#201c1a] font-mono font-bold shadow-inner"
+                              : "bg-[#faf6f0]/50 border-[#e7cca9]/40 text-slate-800 focus:border-luxury-gold focus:bg-white font-mono font-bold"
                         }`}
                       />
                     </div>
@@ -2388,7 +2388,7 @@ export default function App() {
                       whileHover={{ scale: 1.012, y: -0.5 }}
                       whileTap={{ scale: 0.988 }}
                       onClick={handleGoPage}
-                      className="w-full py-2.5 sm:py-3.5 md:py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-[10.5px] sm:text-xs md:text-sm font-extrabold transition-all flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-indigo-600/15"
+                      className="w-full py-2.5 sm:py-3.5 md:py-4 rounded-xl bg-gradient-to-r from-luxury-brown-700 to-luxury-brown-800 hover:from-luxury-brown-800 hover:to-luxury-brown-900 border border-luxury-gold/20 text-white text-[10.5px] sm:text-xs md:text-sm font-extrabold transition-all flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-luxury-brown-900/10"
                     >
                       <span className="tracking-wide">{t.btnGo}</span>
                       {lang === "ar" ? (
@@ -2419,20 +2419,20 @@ export default function App() {
                   transition={{ duration: 0.15 }}
                   className={`relative p-3.5 sm:p-6 md:p-8 rounded-[1.8rem] sm:rounded-[2rem] border transition-all duration-150 flex flex-col justify-between gap-4 sm:gap-6 shadow-2xl overflow-hidden group ${
                     isDarkMode
-                      ? "bg-[#0c0e18] border-slate-800/80 focus-within:border-emerald-500/60 focus-within:ring-4 focus-within:ring-emerald-500/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-[#10b981]/70 hover:shadow-[0_20px_50px_rgba(16,185,129,0.03)]"
-                      : "bg-white border-slate-200 focus-within:border-emerald-400 focus-within:ring-4 focus-within:ring-emerald-500/5 shadow-[0_12px_35px_rgba(0,0,0,0.03)] hover:border-emerald-400 hover:shadow-[0_20px_45px_rgba(16,185,129,0.06)]"
+                      ? "bg-[#120f0e] border-[#e7cca9]/15 focus-within:border-luxury-gold/60 focus-within:ring-4 focus-within:ring-luxury-gold/5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-luxury-gold/80 hover:shadow-[0_20px_50px_rgba(197,160,89,0.03)]"
+                      : "bg-white border-[#e7cca9]/50 focus-within:border-luxury-gold focus-within:ring-4 focus-within:ring-luxury-gold/5 shadow-[0_12px_35px_rgba(0,0,0,0.03)] hover:border-luxury-gold hover:shadow-[0_20px_45px_rgba(197,160,89,0.06)]"
                   }`}
                 >
                   {/* Micro-glow indicator line at the top of card to look incredibly sleek */}
-                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
+                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-luxury-gold/40 to-transparent" />
 
                   {/* Subtly animated inner holographic back-glow */}
-                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-emerald-500/5 dark:bg-emerald-550/8 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-125" />
+                  <div className="absolute -top-12 -right-12 w-36 h-36 bg-luxury-gold/5 dark:bg-[#dfc384]/8 rounded-full blur-3xl pointer-events-none transition-all duration-500 group-hover:scale-125" />
 
                   {/* Top luxury status tracking bar inside the gateway */}
-                  <div className="flex items-center justify-between w-full text-[8.5px] font-mono tracking-wider text-slate-400 dark:text-emerald-400/70 border-b border-slate-100 dark:border-white/5 pb-2.5 sm:pb-3">
+                  <div className="flex items-center justify-between w-full text-[8.5px] font-mono tracking-wider text-slate-400 dark:text-luxury-gold/80 border-b border-slate-100 dark:border-white/5 pb-2.5 sm:pb-3">
                     <span className="flex items-center gap-1 sm:gap-1.5 font-bold">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-luxury-gold animate-ping" />
                       {lang === 'ar' ? 'بوابة التواصل' : 'CONNECT GATE'}
                     </span>
                     <span className="hidden xs:inline">LINK // SOCIAL_WA</span>
@@ -2446,8 +2446,8 @@ export default function App() {
                       <div
                         className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-100 ${
                           isDarkMode
-                            ? "bg-emerald-500/10 text-emerald-400 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
-                            : "bg-emerald-50 border border-emerald-150 text-emerald-700 shadow-sm"
+                            ? "bg-luxury-gold/15 text-luxury-gold shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
+                            : "bg-[#f4ebd9]/60 text-luxury-brown-800 shadow-sm"
                         }`}
                       >
                         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
@@ -2455,13 +2455,13 @@ export default function App() {
                       <div className="text-right">
                         <h4
                           className={`text-[11px] sm:text-xs md:text-sm font-black tracking-tight transition-all ${
-                            isDarkMode ? "text-slate-200" : "text-slate-900"
+                            isDarkMode ? "text-slate-200" : "text-[#523014]"
                           }`}
                         >
                           {t.waShortcutLabel}
                         </h4>
                         <p className={`text-[9px] sm:text-[10px] mt-0.5 line-clamp-1 transition-all ${
-                          isDarkMode ? "text-slate-400" : "text-slate-600"
+                          isDarkMode ? "text-slate-400" : "text-slate-650"
                         }`}>
                           {lang === 'ar' ? 'الانتقال المباشر للجروبات' : 'Join public social nodes'}
                         </p>
@@ -2483,8 +2483,8 @@ export default function App() {
                           waCodeError
                             ? "border-red-500 text-red-500 bg-red-500/5 font-sans font-bold"
                             : isDarkMode
-                              ? "bg-[#080b13] border-slate-800/90 text-slate-100 focus:border-emerald-500/60 focus:bg-[#0c101d] font-mono font-bold shadow-inner"
-                              : "bg-slate-50 border-slate-200 text-slate-800 focus:border-emerald-400 focus:bg-white font-mono font-bold"
+                              ? "bg-[#181514] border-white/5 text-slate-100 focus:border-luxury-gold/60 focus:bg-[#201c1a] font-mono font-bold shadow-inner"
+                              : "bg-[#faf6f0]/50 border-[#e7cca9]/40 text-slate-800 focus:border-luxury-gold focus:bg-white font-mono font-bold"
                         }`}
                       />
                     </div>
@@ -2492,7 +2492,7 @@ export default function App() {
                       whileHover={{ scale: 1.012, y: -0.5 }}
                       whileTap={{ scale: 0.988 }}
                       onClick={handleGoWa}
-                      className="w-full py-2.5 sm:py-3.5 md:py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white text-[10.5px] sm:text-xs md:text-sm font-extrabold transition-all flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-emerald-600/15"
+                      className="w-full py-2.5 sm:py-3.5 md:py-4 rounded-xl bg-gradient-to-r from-luxury-brown-700 to-luxury-brown-800 hover:from-luxury-brown-800 hover:to-luxury-brown-900 border border-luxury-gold/20 text-white text-[10.5px] sm:text-xs md:text-sm font-extrabold transition-all flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-luxury-brown-900/10"
                     >
                       <span className="tracking-wide">{t.btnGo}</span>
                       {lang === "ar" ? (
@@ -2527,22 +2527,22 @@ export default function App() {
                 whileTap={{ scale: 0.99 }}
                 className={`w-full max-w-[420px] mx-auto px-4 py-2.5 rounded-xl border text-center flex items-center justify-center gap-2 mb-6 cursor-pointer shadow-sm transition-all duration-100 ${
                   isDarkMode
-                    ? "bg-indigo-500/5 border-white/5 hover:border-indigo-500/30 text-slate-300 hover:text-indigo-200"
-                    : "bg-white border-indigo-500/15 hover:border-indigo-500/35 text-indigo-800 hover:text-indigo-900 shadow-sm shadow-indigo-500/5"
+                    ? "bg-[#181514] border-luxury-gold/20 hover:border-luxury-gold/50 text-slate-300 hover:text-luxury-gold shadow-md"
+                    : "bg-[#faf6f0]/50 border-luxury-gold/40 hover:border-luxury-gold text-luxury-brown-850 hover:text-luxury-brown-900 shadow-sm shadow-[#e7cca9]/10"
                 }`}
               >
                 <div className="relative flex items-center justify-center">
-                  <MessageCircle className="w-4 h-4 shrink-0 text-indigo-500 animate-pulse" />
-                  <span className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <MessageCircle className="w-4 h-4 shrink-0 text-luxury-gold animate-pulse" />
+                  <span className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 rounded-full bg-luxury-gold animate-ping" />
+                  <span className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 rounded-full bg-luxury-gold" />
                 </div>
-                <span className="text-[11px] md:text-xs font-bold">
+                <span className="text-[11px] md:text-xs font-bold font-sans">
                   {lang === "ar"
                     ? "للحصول على كود مخصص، تواصل معنا فوراً"
                     : "To obtain a custom code, contact us instantly"}
                 </span>
                 <ArrowLeft
-                  className="w-3.5 h-3.5 text-indigo-500 shrink-0 select-none"
+                  className="w-3.5 h-3.5 text-luxury-gold shrink-0 select-none"
                   style={{
                     transform: lang === "ar" ? "none" : "rotate(180deg)",
                   }}
@@ -2593,7 +2593,7 @@ export default function App() {
                             whileHover={{ y: -2, scale: 1.008 }}
                             className={`p-5 md:p-[22px] rounded-2xl border transition-all duration-100 flex flex-row items-center justify-between gap-5 shadow-sm border-l-[6px] ${link.borderColor} relative group overflow-hidden will-change-transform ${
                               isDarkMode
-                                ? "bg-[#0c0e18] border-slate-800/60 hover:bg-[#111425] hover:border-slate-700 shadow-slate-950/20"
+                                ? "bg-[#120f0e] border-[#e7cca9]/15 hover:border-luxury-gold/50 shadow-[#120f0e]/50"
                                 : "bg-white border-slate-200 hover:bg-slate-50 shadow-sm"
                             }`}
                             style={{ direction: "ltr" }}
@@ -2612,15 +2612,15 @@ export default function App() {
                             >
                               <h4 className={`text-[15px] md:text-[16px] font-black leading-snug tracking-tight mb-1 transition-colors duration-100 ${
                                 isDarkMode 
-                                  ? "text-white group-hover:text-indigo-300" 
-                                  : "text-slate-900 group-hover:text-indigo-600"
+                                  ? "text-white group-hover:text-[#dfc384]" 
+                                  : "text-slate-900 group-hover:text-luxury-brown-800"
                               }`}>
                                 {lang === "ar" ? link.title.ar : link.title.en}
                               </h4>
                               <p className={`text-[12px] md:text-[13px] leading-relaxed font-semibold line-clamp-1 transition-all duration-100 ${
                                 isDarkMode 
                                   ? "text-slate-400" 
-                                  : "text-slate-600"
+                                  : "text-slate-650"
                               }`}>
                                 {lang === "ar" ? link.description.ar : link.description.en}
                               </p>
@@ -2630,7 +2630,7 @@ export default function App() {
                             <div
                               className={`w-13 h-13 md:w-15 md:h-15 rounded-xl flex items-center justify-center shrink-0 shadow-inner transition-transform group-hover:scale-105 duration-100 ${
                                 isDarkMode
-                                  ? "bg-[#161f36]/80 border border-white/5 text-slate-300 group-hover:text-white"
+                                  ? "bg-[#181514]/80 border border-white/5 text-slate-300 group-hover:text-[#dfc384]"
                                   : "bg-slate-50 border border-slate-150 text-slate-650"
                               }`}
                             >
@@ -2650,15 +2650,15 @@ export default function App() {
           <footer className="w-full flex flex-col items-center gap-6 mt-10 pb-8">
             <div className="text-center space-y-3.5 w-full max-w-xl px-4">
               <div className="flex flex-row flex-nowrap items-center justify-center gap-3">
-                {/* 1. Direct Phone Call (Indigo) */}
+                {/* 1. Direct Phone Call */}
                 <motion.a
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.94 }}
                   href="tel:01226949834"
                   className={`group w-11 h-11 md:w-12 md:h-12 rounded-xl transition-all duration-100 border flex items-center justify-center ${
                     isDarkMode
-                      ? "bg-[#10192d]/80 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-indigo-300 shadow-lg shadow-indigo-950/25"
-                      : "bg-white border-indigo-100 text-indigo-600 hover:bg-indigo-5 hover:border-indigo-300 shadow-sm"
+                      ? "bg-[#181412]/80 border-luxury-gold/25 text-[#dfc384] hover:bg-[#201c1a] hover:border-luxury-gold hover:text-white shadow-lg shadow-black/35"
+                      : "bg-white border-[#e7cca9]/65 text-[#523014] hover:bg-[#faf6f0] hover:border-luxury-gold hover:text-[#381f0b] shadow-sm"
                   }`}
                   title={
                     lang === "ar"
@@ -2669,17 +2669,17 @@ export default function App() {
                   <Phone className="w-4.5 h-4.5 md:w-5 md:h-5 stroke-[2px]" />
                 </motion.a>
 
-                {/* 2. WhatsApp Direct Chat (Emerald) */}
+                {/* 2. WhatsApp Direct Chat */}
                 <motion.a
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.94 }}
                   href="https://wa.me/201226949834"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group w-11 h-11 md:w-12 md:h-12 rounded-xl transition-all duration-100 border flex items-center justify-center ${
+                  className={`group w-11 h-11 md:w-12 md:h-12 rounded-xl transition-all duration-100 border flex items-center justify-center relative ${
                     isDarkMode
-                      ? "bg-[#10192d]/80 border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-300 shadow-lg shadow-emerald-950/25"
-                      : "bg-white border-emerald-100 text-emerald-600 hover:bg-emerald-50 hover:border-emerald-300 shadow-sm"
+                      ? "bg-[#181412]/80 border-luxury-gold/25 text-[#dfc384] hover:bg-[#201c1a] hover:border-luxury-gold hover:text-white shadow-lg shadow-black/35"
+                      : "bg-white border-[#e7cca9]/65 text-[#523014] hover:bg-[#faf6f0] hover:border-luxury-gold hover:text-[#381f0b] shadow-sm"
                   }`}
                   title={
                     lang === "ar" ? "واتساب المباشر" : "Direct WhatsApp Chat"
@@ -2687,12 +2687,12 @@ export default function App() {
                 >
                   <div className="relative flex items-center justify-center">
                     <MessageCircle className="w-4.5 h-4.5 md:w-5 md:h-5 stroke-[2px]" />
-                    <div className="absolute top-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-1 ring-slate-900 animate-ping" />
-                    <div className="absolute top-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-1 ring-slate-900" />
+                    <div className="absolute top-0 right-0 w-2 h-2 rounded-full bg-luxury-gold ring-1 ring-slate-900 animate-ping" />
+                    <div className="absolute top-0 right-0 w-2 h-2 rounded-full bg-luxury-gold ring-1 ring-slate-900" />
                   </div>
                 </motion.a>
 
-                {/* 3. Official Facebook Page (Blue) */}
+                {/* 3. Official Facebook Page */}
                 <motion.a
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.94 }}
@@ -2701,8 +2701,8 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`group w-11 h-11 md:w-12 md:h-12 rounded-xl transition-all duration-100 border flex items-center justify-center ${
                     isDarkMode
-                      ? "bg-[#10192d]/80 border-blue-500/20 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/50 hover:text-blue-300 shadow-lg shadow-indigo-950/25"
-                      : "bg-white border-blue-100 text-blue-600 hover:bg-blue-50 hover:border-blue-300 shadow-sm"
+                      ? "bg-[#181412]/80 border-luxury-gold/25 text-[#dfc384] hover:bg-[#201c1a] hover:border-luxury-gold hover:text-white shadow-lg shadow-black/35"
+                      : "bg-white border-[#e7cca9]/65 text-[#523014] hover:bg-[#faf6f0] hover:border-luxury-gold hover:text-[#381f0b] shadow-sm"
                   }`}
                   title={
                     lang === "ar"
@@ -2713,7 +2713,7 @@ export default function App() {
                   <Facebook className="w-4.5 h-4.5 md:w-5 md:h-5 stroke-[2px]" />
                 </motion.a>
 
-                {/* 4. Official WhatsApp Channel (Teal) */}
+                {/* 4. Official WhatsApp Channel */}
                 <motion.a
                   whileHover={{ scale: 1.08, y: -2 }}
                   whileTap={{ scale: 0.94 }}
@@ -2722,8 +2722,8 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`group w-11 h-11 md:w-12 md:h-12 rounded-xl transition-all duration-100 border flex items-center justify-center ${
                     isDarkMode
-                      ? "bg-[#10192d]/80 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-indigo-300 shadow-lg shadow-indigo-950/25"
-                      : "bg-white border-indigo-100 text-indigo-600 hover:bg-indigo-50 hover:border-indigo-300 shadow-sm"
+                      ? "bg-[#181412]/80 border-luxury-gold/25 text-[#dfc384] hover:bg-[#201c1a] hover:border-luxury-gold hover:text-white shadow-lg shadow-black/35"
+                      : "bg-white border-[#e7cca9]/65 text-[#523014] hover:bg-[#faf6f0] hover:border-luxury-gold hover:text-[#381f0b] shadow-sm"
                   }`}
                   title={
                     lang === "ar"
@@ -2734,7 +2734,7 @@ export default function App() {
                   <Megaphone className="w-4.5 h-4.5 md:w-5 md:h-5 stroke-[2px]" />
                 </motion.a>
 
-                {/* 5. Google Shared Website (Amber) */}
+                {/* 5. Google Shared Website */}
                 <motion.a
                   whileHover={{ scale: 1.05, y: -1.5 }}
                   whileTap={{ scale: 0.96 }}
@@ -2743,8 +2743,8 @@ export default function App() {
                   rel="noopener noreferrer"
                   className={`group w-9 h-9 rounded-lg transition-all duration-100 border flex items-center justify-center ${
                     isDarkMode
-                      ? "bg-[#10192d]/80 border-indigo-500/20 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-500/50 hover:text-indigo-300"
-                      : "bg-white border-indigo-100 text-indigo-600 hover:bg-indigo-50 hover:border-indigo-300 shadow-sm"
+                      ? "bg-[#181412]/80 border-luxury-gold/25 text-[#dfc384] hover:bg-[#201c1a] hover:border-luxury-gold hover:text-white"
+                      : "bg-white border-[#e7cca9]/65 text-[#523014] hover:bg-[#faf6f0] hover:border-luxury-gold hover:text-[#381f0b] shadow-sm"
                   }`}
                   title={
                     lang === "ar"

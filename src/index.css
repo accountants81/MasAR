@@ -7,6 +7,21 @@
   --font-sans: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Cairo", "Montserrat", sans-serif;
   --font-cairo: "Cairo", sans-serif;
+
+  --color-luxury-gold: #c5a059;
+  --color-luxury-gold-light: #dfc384;
+  --color-luxury-gold-dark: #a37c35;
+  --color-luxury-gold-muted: rgba(197, 160, 89, 0.2);
+  --color-luxury-brown-50: #faf6f0;
+  --color-luxury-brown-100: #f4ebd9;
+  --color-luxury-brown-200: #e7cca9;
+  --color-luxury-brown-300: #cca374;
+  --color-luxury-brown-500: #a87c53;
+  --color-luxury-brown-600: #8a5e38;
+  --color-luxury-brown-700: #6d4422;
+  --color-luxury-brown-800: #523014;
+  --color-luxury-brown-900: #3a1f0a;
+  --color-luxury-brown-950: #1b0e04;
 }
 
 @layer base {
@@ -20,7 +35,7 @@
   Arabic text rendering optimization.
   Cursive letters MUST NOT have letter-spacing (tracking) as it breaks text connections.
   Also disable text transformations like uppercase/lowercase for Arabic text rendering.
-*/
+ */
 [dir="rtl"], [dir="rtl"] *, .rtl, .rtl * {
   letter-spacing: 0 !important;
   word-spacing: normal !important;
@@ -33,13 +48,18 @@
   }
 
   .luxury-button {
-    @apply relative overflow-hidden transition-all duration-300 active:scale-95 text-white;
-    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    @apply relative overflow-hidden transition-all duration-300 active:scale-95 text-[#fbfbf9] border border-[#c5a059]/40;
+    background: linear-gradient(135deg, #2c1a11 0%, #120905 100%);
+  }
+
+  .luxury-button:hover {
+    @apply border-[#c5a059]/80;
+    background: linear-gradient(135deg, #3a2217 0%, #1a0d07 100%);
   }
 
   .luxury-button::before {
     content: "";
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full skew-x-[-25deg];
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full skew-x-[-25deg];
   }
 
   .luxury-button:hover::before {
@@ -52,7 +72,7 @@
 
   .premium-border::after {
     content: "";
-    @apply absolute -inset-[1px] rounded-[inherit] -z-10 bg-linear-to-br from-indigo-500/20 via-transparent to-purple-500/20 opacity-0 transition-opacity duration-500;
+    @apply absolute -inset-[1px] rounded-[inherit] -z-10 bg-gradient-to-br from-[#c5a059]/30 via-transparent to-[#8a5e38]/30 opacity-0 transition-opacity duration-500;
   }
 
   .premium-border:hover::after {
